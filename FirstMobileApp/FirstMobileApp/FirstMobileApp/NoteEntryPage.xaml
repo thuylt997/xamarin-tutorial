@@ -1,4 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<!--
+    The XAML markup for the NoteEntryPage class, which defines 
+    the UI for the page shown when the user enters a note.    
+-->
+
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -6,7 +11,29 @@
              mc:Ignorable="d"
              x:Class="FirstMobileApp.NoteEntryPage"
              Title="Note Entry">
-    <StackLayout Margin="20">
+
+    <ContentPage.Resources>
+        <!-- Implicit styles -->
+        <Style TargetType="{x:Type Editor}">
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource AppBackgroundColor}" />
+        </Style>
+
+        <Style TargetType="Button"
+               ApplyToDerivedTypes="True"
+               CanCascade="True">
+            <Setter Property="FontSize"
+                    Value="Medium" />
+            <Setter Property="BackgroundColor"
+                    Value="LightGray" />
+            <Setter Property="TextColor"
+                    Value="Black" />
+            <Setter Property="BorderRadius"
+                    Value="10" />
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="{StaticResource PageMargin}">
         <Editor Placeholder="Enter your note"
                 Text="{Binding text}"
                 HeightRequest="100" />

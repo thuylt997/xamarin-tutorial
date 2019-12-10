@@ -56,3 +56,8 @@ E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\o
 E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\obj\iPhoneSimulator\Debug\FirstMobileApp.iOS.csproj.CopyComplete
 E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\obj\iPhoneSimulator\Debug\FirstMobileApp.iOS.exe
 E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\obj\iPhoneSimulator\Debug\FirstMobileApp.iOS.pdb
+E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\bin\iPhoneSimulator\Debug\SQLite-net.dll
+E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.batteries_green.dll
+E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.batteries_v2.dll
+E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.core.dll
+E:\RUNSYSTEM\Xamarin\examples\FirstMobileApp\FirstMobileApp\FirstMobileApp.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.provider.sqlite3.dll
