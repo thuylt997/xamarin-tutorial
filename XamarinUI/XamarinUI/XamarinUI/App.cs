@@ -4,12 +4,10 @@ using XamarinUI.Source.ProgressBarExample;
 
 namespace XamarinUI
 {
-    public partial class App : Application
+    public class App : Application
     {
         public App()
         {
-            InitializeComponent();
-
             //MainPage = new NavigationPage(new ActivityIndicatorDisplayPage());
             MainPage = new NavigationPage(new ProgressBarDisplayPage());
         }
