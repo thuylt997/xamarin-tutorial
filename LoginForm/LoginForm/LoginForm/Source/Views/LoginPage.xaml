@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.LoginPage"
+             NavigationPage.HasNavigationBar="false"
+             BackgroundImageSource="FujiMount.jpg">
+
+    <StackLayout x:Name="masterLayout">
+        <StackLayout x:Name="logo"
+                     VerticalOptions="Fill">
+            <Frame CornerRadius="100"
+                   IsClippedToBounds="True"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center"
+                   Padding="0"
+                   Margin="0, 50, 0, 0">
+                <Image x:Name="profilePicture"
+                       Source="ThisIsMe.jpg"
+                       HeightRequest="100"
+                       Margin="0" />
+            </Frame>
+
+            <Image x:Name="imageIcon"
+                   Source="XamarinLogo.png"
+                   Margin="0" />
+            <!-- Margin="left, top, right, bottom"  -->
+        </StackLayout>
+
+        <StackLayout x:Name="loginEntryStack"
+                     VerticalOptions="CenterAndExpand">
+            <StackLayout.Padding>
+                <OnIdiom x:TypeArguments="Thickness"
+                         Phone="40, 0, 40, 0"
+                         Tablet="140, 150, 140, 0" />
+            </StackLayout.Padding>
+
+            <Label x:Name="labelUsername"
+                   Text="Username"
+                   FontAttributes="Bold" />
+            <Entry x:Name="entryUsername"
+                   Placeholder="Enter your username"
+                   PlaceholderColor="LightGray"
+                   TextColor="White" />
+
+            <Label x:Name="labelPassword"
+                   Text="Password"
+                   FontAttributes="Bold" />
+            <Entry x:Name="entryPassword"
+                   Placeholder="Enter your password"
+                   PlaceholderColor="LightGray"
+                   TextColor="White" />
+
+            <Button x:Name="submitButton"
+                    Text="Sign In"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    Clicked="OnSignInClicked"
+                    CornerRadius="30"
+                    BackgroundColor="#C44237" />
+
+            <Label HorizontalTextAlignment="End"
+                   Margin="0, 5, 0, 0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Forgot password?"
+                              TextColor="WhiteSmoke">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                      CommandParameter="https://docs.microsoft.com/en-us/xamarin/" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
