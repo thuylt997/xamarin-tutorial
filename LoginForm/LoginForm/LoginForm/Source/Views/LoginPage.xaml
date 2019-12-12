@@ -10,24 +10,28 @@
 
     <StackLayout x:Name="masterLayout">
         <StackLayout x:Name="logo"
-                     VerticalOptions="Fill">
+                     VerticalOptions="FillAndExpand">
+
+            <Image x:Name="imageIcon"
+                   Source="RunsystemLogo.png"
+                   HeightRequest="80"
+                   Margin="0, 0, 0, 0" />
+            <!-- Margin="left, top, right, bottom"  -->
+
             <Frame CornerRadius="100"
                    IsClippedToBounds="True"
                    HeightRequest="100"
                    WidthRequest="100"
                    HorizontalOptions="Center"
                    Padding="0"
-                   Margin="0, 50, 0, 0">
+                   Margin="0, 0, 0, 0">
                 <Image x:Name="profilePicture"
                        Source="ThisIsMe.jpg"
                        HeightRequest="100"
                        Margin="0" />
             </Frame>
 
-            <Image x:Name="imageIcon"
-                   Source="XamarinLogo.png"
-                   Margin="0" />
-            <!-- Margin="left, top, right, bottom"  -->
+
         </StackLayout>
 
         <StackLayout x:Name="loginEntryStack"
@@ -40,23 +44,41 @@
 
             <Label x:Name="labelUsername"
                    Text="Username"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold, Italic"
+                   TextColor="White" />
             <Entry x:Name="entryUsername"
                    Placeholder="Enter your username"
                    PlaceholderColor="LightGray"
-                   TextColor="White" />
+                   TextColor="White"
+                   CharacterSpacing="1"
+                   ClearButtonVisibility="WhileEditing"
+                   Keyboard="Default"
+                   IsTextPredictionEnabled="False"
+                   FontAttributes="Italic"
+                   Focused="OnFocusUsernameEntry"
+                   Unfocused="OnUnfocusUsernameEntry" />
 
             <Label x:Name="labelPassword"
                    Text="Password"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold, Italic"
+                   TextColor="White" />
             <Entry x:Name="entryPassword"
                    Placeholder="Enter your password"
                    PlaceholderColor="LightGray"
-                   TextColor="White" />
+                   TextColor="White"
+                   IsPassword="True"
+                   CharacterSpacing="1"
+                   ClearButtonVisibility="WhileEditing"
+                   Keyboard="Default"
+                   FontAttributes="Italic"
+                   Focused="OnFocusPasswordEntry"
+                   Unfocused="OnUnfocusPasswordEntry" />
 
             <Button x:Name="submitButton"
                     Text="Sign In"
                     TextColor="White"
+                    FontSize="18"
+                    Margin="0, 10, 0, 0"
                     FontAttributes="Bold"
                     Clicked="OnSignInClicked"
                     CornerRadius="30"

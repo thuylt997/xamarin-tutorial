@@ -25,10 +25,10 @@ namespace LoginForm.Source.Views
 
         private void InitalizeStyle()
         {
-            BackgroundColor = Constants.backgroundColor;
-            labelUsername.TextColor = Constants.mainTextColor;
-            labelPassword.TextColor = Constants.mainTextColor;
-            imageIcon.HeightRequest = Constants.loginIconHeight;
+            //BackgroundColor = Constants.backgroundColor;
+            //labelUsername.TextColor = Constants.mainTextColor;
+            //labelPassword.TextColor = Constants.mainTextColor;
+            //imageIcon.HeightRequest = Constants.loginIconHeight;
 
             entryUsername.Completed += (s, e) => entryPassword.Focus();
             entryPassword.Completed += (s, e) => OnSignInClicked(s, e);
@@ -40,13 +40,38 @@ namespace LoginForm.Source.Views
 
             if (user.AuthenticationChecking())
             {
-                DisplayAlert("Login", "Successfully logged in", "OK");
-                App.UserDatabase.SaveUser(user);
+                NavigateToHomePage();
+                //App.UserDatabase.SaveUser(user);
             }
             else
             {
                 DisplayAlert("Login", "Your authentication is not correct", "OK");
             }
+        }
+
+        async void NavigateToHomePage()
+        {
+            await Navigation.PushAsync(new HomePage());
+        }
+
+        void OnFocusUsernameEntry(object sender, EventArgs e)
+        {
+            entryUsername.Placeholder = string.Empty;
+        }
+
+        void OnUnfocusUsernameEntry(object sender, EventArgs e) 
+        {
+            entryUsername.Placeholder = "Enter your username";
+        }
+
+        void OnFocusPasswordEntry(object sender, EventArgs e)
+        {
+            entryPassword.Placeholder = string.Empty;
+        }
+
+        void OnUnfocusPasswordEntry(object sender, EventArgs e)
+        {
+            entryPassword.Placeholder = "Enter your password";
         }
     }
 }

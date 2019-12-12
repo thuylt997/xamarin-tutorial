@@ -21,9 +21,20 @@ namespace LoginForm.Source.Models
 
         public bool AuthenticationChecking()
         {
+            string myUsername = this.username;
+            string myPassword = this.password;
             bool isValid = true;
 
-            if (string.IsNullOrEmpty(this.username) || string.IsNullOrEmpty(this.password))
+            if (string.IsNullOrEmpty(myUsername) || string.IsNullOrEmpty(myPassword))
+            {
+                isValid = false;
+            }
+
+            if (String.Equals(myUsername, "admin") && String.Equals(myPassword, "admin"))
+            {
+                isValid = true;
+            }
+            else
             {
                 isValid = false;
             }
