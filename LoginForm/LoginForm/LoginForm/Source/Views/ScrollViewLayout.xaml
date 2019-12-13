@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.ScrollViewLayout"
+             Title="ScrollView Layout Example"
+             Padding="10">
+
+    <ContentPage.Content>
+        <ScrollView x:Name="scroll">
+            <StackLayout>
+                <Label Text="Hello world!!!"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"
+                       TextDecorations="Underline"
+                       FontSize="25"
+                       TextColor="Blue" />
+                <Label x:Name="label"
+                       Text="This example allow you scroll up and scroll down the view"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Italic"
+                       FontSize="20"
+                       Margin="0, 0, 0, 50"
+                       TextColor="Red" />
+                <BoxView BackgroundColor="LightPink"
+                         HeightRequest="600"
+                         WidthRequest="150" />
+                <Grid RowSpacing="1"
+                      ColumnSpacing="1"
+                      Margin="0, 50, 0, 0">
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>-->
+
+                    <Label Text="This section is yours"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           TextColor="Black" />
+                    <Entry x:Name="target"
+                           Placeholder="Enter your name"
+                           Margin="20" />
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

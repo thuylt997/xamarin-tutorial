@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.StackLayout"
+             Title="Stack Layout Example"
+             Padding="10">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="stackLayout"
+                     Spacing="5">
+            <Button Text="Spacing: 0"
+                    FontSize="20"
+                    VerticalOptions="Start"
+                    HorizontalOptions="FillAndExpand"
+                    x:Name="StackChangeButton" />
+            <BoxView Color="Yellow"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" />
+            <BoxView Color="Green"
+                     VerticalOptions="FillAndExpand"
+                     HorizontalOptions="FillAndExpand" />
+            <BoxView HeightRequest="75"
+                     Color="Blue"
+                     VerticalOptions="End"
+                     HorizontalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

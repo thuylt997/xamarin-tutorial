@@ -18,13 +18,14 @@
                    Margin="0, 0, 0, 0" />
             <!-- Margin="left, top, right, bottom"  -->
 
-            <Frame CornerRadius="100"
+            <Frame CornerRadius="50"
                    IsClippedToBounds="True"
                    HeightRequest="100"
                    WidthRequest="100"
                    HorizontalOptions="Center"
                    Padding="0"
-                   Margin="0, 0, 0, 0">
+                   Margin="0, 0, 0, 0"
+                   HasShadow="True">
                 <Image x:Name="profilePicture"
                        Source="ThisIsMe.jpg"
                        HeightRequest="100"

@@ -3,15 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views"
              mc:Ignorable="d"
              x:Class="LoginForm.Source.Views.HomePage"
-             Title="Home Page">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
-            
-        </StackLayout>
-    </ContentPage.Content>
+             Title="Home Page"
+             Padding="10">
+
+    <TableView Intent="Menu">
+        <TableRoot>
+            <TableSection Title="Grid Layout Section Title"
+                          TextColor="Red">
+                <TextCell Text="Grid Layout Example"
+                          Detail="Simple calculator app"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:GridLayout}" />
+            </TableSection>
+
+            <TableSection Title="ScrollView Layout Section Title"
+                          TextColor="Red">
+                <TextCell Text="ScrollView Layout Example"
+                          Detail="Contains layouts and enables them to scroll offscreen"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ScrollViewLayout}" />
+            </TableSection>
+
+            <TableSection Title="Stack Layout Section Title"
+                          TextColor="Red">
+                <TextCell Text="Stack Layout Example"
+                          Detail="Organizing views in a one-dimensional line"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:StackLayout}" />
+            </TableSection>
+
+            <TableSection Title="Absolute Layout Section Title"
+                          TextColor="Red">
+                <TextCell Text="Absolute Layout Example"
+                          Detail="Positions and sizes child elements proportional to its own size and position or by absolute values"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:AbsoluteLayout}" />
+                <TextCell Text="Complex Absolute Layout Example"
+                          Detail="AbsoluteLayout Demo with views and layouts as combination"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ComplexAbsoluteLayout}" />
+            </TableSection>
+
+            <TableSection Title="Relative Layout Section Title"
+                          TextColor="Red">
+                <TextCell Text="Relative Layout Example"
+                          Detail="Position and size views relative to properties of the layout or sibling views"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:RelativeLayout}" />
+                <TextCell Text="Complex Relative Layout Example"
+                          Detail="RelativeLayout Demo with views and layouts as combination"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ComplexRelativeLayout}" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
 </ContentPage>

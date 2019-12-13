@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.AbsoluteLayout"
+             Title="Absolute Layout Example"
+             Padding="10">
+
+    <ContentPage.Content>
+        <AbsoluteLayout x:Name="absoluteLayout">
+            <AbsoluteLayout x:Name="box"
+                            BackgroundColor="LightBlue"
+                            AbsoluteLayout.LayoutFlags="All"
+                            AbsoluteLayout.LayoutBounds="0, 0, .25, .5">
+                <BoxView x:Name="anchorVert"
+                         BackgroundColor="LightGray"
+                         WidthRequest="4"
+                         VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutFlags="XProportional" />
+            </AbsoluteLayout>
+
+            <StackLayout>
+                <Label x:Name="status"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black" />
+                <Label x:Name="coords"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black" />
+                <Label x:Name="flagsBounds"
+                       FontSize="20"
+                       HorizontalTextAlignment="Center"
+                       TextColor="Black" />
+            </StackLayout>
+
+            <Button x:Name="btnPos"
+                    Text="Position"
+                    BackgroundColor="LightGreen"
+                    CornerRadius="0"
+                    Clicked="HandlePosition"
+                    TextColor="Gray"
+                    FontSize="20"
+                    AbsoluteLayout.LayoutBounds="1, 0, 120, 40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+            <Button x:Name="btnSize"
+                    Text="Size"
+                    BackgroundColor="LightPink"
+                    CornerRadius="0"
+                    Clicked="HandleSize"
+                    TextColor="Gray"
+                    FontSize="20"
+                    AbsoluteLayout.LayoutBounds="0, 1, 200, 40"
+                    AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+
+            <Label Text="I'm centered on iPhone 4 but no other device"
+                   AbsoluteLayout.LayoutBounds="115,150,100,100"
+                   LineBreakMode="WordWrap"
+                   TextColor="Black" />
+            <Label Text="I'm bottom center on every device."
+                   AbsoluteLayout.LayoutBounds=".5,1,.5,.1"
+                   AbsoluteLayout.LayoutFlags="All"
+                   LineBreakMode="WordWrap"
+                   TextColor="Black" />
+
+            <BoxView Color="Olive"
+                     AbsoluteLayout.LayoutBounds="1,.5, 25, 100"
+                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <BoxView Color="Red"
+                     AbsoluteLayout.LayoutBounds="0,.5,25,100"
+                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+            <BoxView Color="Blue"
+                     AbsoluteLayout.LayoutBounds=".5,0,100,25"
+                     AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
