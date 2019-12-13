@@ -41,6 +41,10 @@
                           Detail="Positions and sizes child elements proportional to its own size and position or by absolute values"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:AbsoluteLayout}" />
+                <TextCell Text="Absolute Layout 02 Example"
+                          Detail="Positions and sizes child elements proportional to its own size and position or by absolute values"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:AbsoluteLayout02}" />
                 <TextCell Text="Complex Absolute Layout Example"
                           Detail="AbsoluteLayout Demo with views and layouts as combination"
                           Command="{Binding NavigateCommand}"
