@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.ProgressBarXamlPage"
+             Title="ProgressBar XAML Page"
+             Padding="10">
+
+    <StackLayout>
+        <ProgressBar x:Name="defaultProgressBar"
+                     WidthRequest="500"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="CenterAndExpand" />
+        <ProgressBar x:Name="styledProgressBar"
+                     WidthRequest="500"
+                     ProgressColor="Orange"
+                     HorizontalOptions="Fill"
+                     VerticalOptions="CenterAndExpand" />
+
+        <Button Text="Click to increase the progress"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="OnButtonClicked" />
+    </StackLayout>
+</ContentPage>

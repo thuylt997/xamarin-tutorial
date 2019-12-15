@@ -17,6 +17,10 @@
                           Detail="Simple calculator app"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:GridLayout}" />
+                <TextCell Text="Grid Layout 02 Example"
+                          Detail="Basic grid layout"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:GridLayout02}" />
             </TableSection>
 
             <TableSection Title="ScrollView Layout Section Title"
@@ -33,6 +37,10 @@
                           Detail="Organizing views in a one-dimensional line"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:StackLayout}" />
+                <TextCell Text="Stack Layout 02 Example"
+                          Detail="Organizing views in a one-dimensional line"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:StackLayout02}" />
             </TableSection>
 
             <TableSection Title="Absolute Layout Section Title"
@@ -61,6 +69,46 @@
                           Detail="RelativeLayout Demo with views and layouts as combination"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ComplexRelativeLayout}" />
+            </TableSection>
+
+            <TableSection Title="Activity Indicator Section Title"
+                          TextColor="Red">
+                <TextCell Text="ActivityIndicator XAML Example"
+                          Detail="Implement an ActivityIndicator in XAML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ActivityIndicatorXamlPage}" />
+            </TableSection>
+
+            <TableSection Title="Progress Bar Section Title"
+                          TextColor="Red">
+                <TextCell Text="ProgressBar XAML Example"
+                          Detail="Implement a ProgressBar in XAML"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:ProgressBarXamlPage}" />
+            </TableSection>
+
+            <TableSection Title="Pop-ups Section Title"
+                          TextColor="Red">
+                <TextCell Text="Pop-ups Example"
+                          Detail="Display an alert to the user, and ask a simple question"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:Popups}" />
+            </TableSection>
+
+            <TableSection Title="App Lifecycle Section Title"
+                          TextColor="Red">
+                <TextCell Text="App Lifecycle Example"
+                          Detail="Understanding the lifecycle in Xamarin.Forms App"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:AppLifecycle}" />
+            </TableSection>
+
+            <TableSection Title="Local Database Section Title"
+                          TextColor="Red">
+                <TextCell Text="Local Database Example"
+                          Detail="Store data in a local SQLite.NET database"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:LocalDatabase}" />
             </TableSection>
         </TableRoot>
     </TableView>
