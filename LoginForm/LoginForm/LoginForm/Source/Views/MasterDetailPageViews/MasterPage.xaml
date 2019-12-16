@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.MasterDetailPageViews"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.MasterDetailPageViews.MasterPage"
+             Title="Personal Organiser"
+             Padding="0, 40, 0, 0"
+             IconImageSource="hamburger.png"
+             BackgroundColor="Gray">
+
+    <StackLayout>
+        <ListView x:Name="listView"
+                  x:FieldModifier="public">
+
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:MasterPageItem}">
+                    <local:MasterPageItem Title="Home"
+                                          IconSource="home.png"
+                                          TargetType="{x:Type local:HomePage}" />
+                    <local:MasterPageItem Title="Contacts"
+                                          IconSource="contacts.png"
+                                          TargetType="{x:Type local:ContactsPage}" />
+                    <local:MasterPageItem Title="To do list"
+                                          IconSource="todo.png"
+                                          TargetType="{x:Type local:TodoListPage}" />
+                    <local:MasterPageItem Title="Reminders"
+                                          IconSource="reminders"
+                                          TargetType="{x:Type local:ReminderPage}" />
+                </x:Array>
+            </ListView.ItemsSource>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5, 10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1"
+                                   Text="{Binding Title}" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

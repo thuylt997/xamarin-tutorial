@@ -11,8 +11,10 @@
 
     <TableView Intent="Menu">
         <TableRoot>
-            <TableSection Title="Grid Layout Section Title"
+            <TableSection Title="Week 01"
                           TextColor="Red">
+
+                <!--Grid Layout-->
                 <TextCell Text="Grid Layout Example"
                           Detail="Simple calculator app"
                           Command="{Binding NavigateCommand}"
@@ -21,18 +23,14 @@
                           Detail="Basic grid layout"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:GridLayout02}" />
-            </TableSection>
 
-            <TableSection Title="ScrollView Layout Section Title"
-                          TextColor="Red">
+                <!--ScrollView Layout-->
                 <TextCell Text="ScrollView Layout Example"
                           Detail="Contains layouts and enables them to scroll offscreen"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ScrollViewLayout}" />
-            </TableSection>
 
-            <TableSection Title="Stack Layout Section Title"
-                          TextColor="Red">
+                <!--Stack Layout-->
                 <TextCell Text="Stack Layout Example"
                           Detail="Organizing views in a one-dimensional line"
                           Command="{Binding NavigateCommand}"
@@ -41,10 +39,8 @@
                           Detail="Organizing views in a one-dimensional line"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:StackLayout02}" />
-            </TableSection>
 
-            <TableSection Title="Absolute Layout Section Title"
-                          TextColor="Red">
+                <!--Absolute Layout-->
                 <TextCell Text="Absolute Layout Example"
                           Detail="Positions and sizes child elements proportional to its own size and position or by absolute values"
                           Command="{Binding NavigateCommand}"
@@ -57,10 +53,8 @@
                           Detail="AbsoluteLayout Demo with views and layouts as combination"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ComplexAbsoluteLayout}" />
-            </TableSection>
 
-            <TableSection Title="Relative Layout Section Title"
-                          TextColor="Red">
+                <!--Relative Layout-->
                 <TextCell Text="Relative Layout Example"
                           Detail="Position and size views relative to properties of the layout or sibling views"
                           Command="{Binding NavigateCommand}"
@@ -69,46 +63,68 @@
                           Detail="RelativeLayout Demo with views and layouts as combination"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ComplexRelativeLayout}" />
-            </TableSection>
 
-            <TableSection Title="Activity Indicator Section Title"
-                          TextColor="Red">
+                <!--Activity Indicator-->
                 <TextCell Text="ActivityIndicator XAML Example"
                           Detail="Implement an ActivityIndicator in XAML"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ActivityIndicatorXamlPage}" />
-            </TableSection>
 
-            <TableSection Title="Progress Bar Section Title"
-                          TextColor="Red">
+                <!--Progress Bar-->
                 <TextCell Text="ProgressBar XAML Example"
                           Detail="Implement a ProgressBar in XAML"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:ProgressBarXamlPage}" />
-            </TableSection>
 
-            <TableSection Title="Pop-ups Section Title"
-                          TextColor="Red">
+                <!--Pop-ups-->
                 <TextCell Text="Pop-ups Example"
                           Detail="Display an alert to the user, and ask a simple question"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:Popups}" />
-            </TableSection>
 
-            <TableSection Title="App Lifecycle Section Title"
-                          TextColor="Red">
+                <!--App Lifecycle-->
                 <TextCell Text="App Lifecycle Example"
                           Detail="Understanding the lifecycle in Xamarin.Forms App"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:AppLifecycle}" />
-            </TableSection>
 
-            <TableSection Title="Local Database Section Title"
-                          TextColor="Red">
+                <!--Local Database-->
                 <TextCell Text="Local Database Example"
                           Detail="Store data in a local SQLite.NET database"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:LocalDatabase}" />
+
+                <!--Slider-->
+                <TextCell Text="Basic Slider Example"
+                          Detail="Use a Slider for selecting from a range of continuous values"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:Slider}" />
+            </TableSection>
+
+            <TableSection Title="Week 02"
+                          TextColor="Red">
+
+                <!--Navigation-->
+                <TextCell Text="TabbedPage with Page Collection"
+                          Detail="Populate a TabbedPage with a Page collection"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:TabbedPageExample}" />
+                <TextCell Text="TabbedPage with Template"
+                          Detail="Populate a TabbedPage with a template"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:TabbedPageWithTemplate}" />
+                <TextCell Text="MasterDetailPage Example"
+                          Detail="Creating a MasterDetailPage"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:MasterDetailPageExample}" />
+                <TextCell Text="Hierarchical Navigation"
+                          Detail="Creating a Hierarchical Navigation Page"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:HierarchicalNavigation}" />
+                <TextCell Text="Combine Navigation Example"
+                          Detail="Creating a Combine Navigation Example"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CombineNavigation}" />
             </TableSection>
         </TableRoot>
     </TableView>

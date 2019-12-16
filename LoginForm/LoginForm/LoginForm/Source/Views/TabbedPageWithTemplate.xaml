@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:LoginForm.Source.Views.Template"
+            mc:Ignorable="d"
+            x:Class="LoginForm.Source.Views.TabbedPageWithTemplate"
+            Title="TabbedPage with Template"
+            ItemsSource="{x:Static local:MonkeyDataModel.All}">
+
+    <TabbedPage.Resources>
+        <ResourceDictionary>
+            <local:NonNullToBooleanConverter x:Key="booleanConverter" />
+        </ResourceDictionary>
+    </TabbedPage.Resources>
+
+    <TabbedPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage Title="{Binding Name}"
+                         IconImageSource="monkeyicon.png">
+                <StackLayout Padding="5, 25">
+                    <Label Text="{Binding Name}"
+                           FontAttributes="Bold"
+                           FontSize="Large"
+                           HorizontalOptions="Center" />
+                    <Image Source="{Binding PhotoUrl}"
+                           WidthRequest="200"
+                           HeightRequest="200" />
+
+                    <StackLayout Padding="50, 10">
+                        <StackLayout Orientation="Horizontal"
+                                     BackgroundColor="LightGray">
+                            <Label Text="Family:"
+                                   HorizontalOptions="FillAndExpand"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Family}"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     BackgroundColor="LightGray"
+                                     IsVisible="{Binding SubFamily, Converter={StaticResource booleanConverter}}">
+                            <Label Text="Subfamily:"
+                                   HorizontalOptions="FillAndExpand"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding SubFamily}"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     BackgroundColor="LightGray"
+                                     IsVisible="{Binding Tribe, Converter={StaticResource booleanConverter}}">
+                            <Label Text="Tribe:"
+                                   HorizontalOptions="FillAndExpand"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Tribe}"
+                                   FontSize="Medium"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal"
+                                     BackgroundColor="LightGray">
+                            <Label Text="Genus:"
+                                   HorizontalOptions="FillAndExpand"
+                                   FontSize="Medium"
+                                   FontAttributes="Bold"/>
+                            <Label Text="{Binding Genus}" 
+                                   FontSize="Medium"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </ContentPage>
+        </DataTemplate>
+    </TabbedPage.ItemTemplate>
+</TabbedPage>
