@@ -7,13 +7,22 @@
              mc:Ignorable="d"
              x:Class="LoginForm.Source.Views.CombineNavigationViews.MasterPage"
              Title="Combine Navigation Example"
-             Padding="0, 40, 0, 0"
-             BackgroundColor="WhiteSmoke"
+             Padding="0, 20, 0, 0"
+             BackgroundColor="LightSteelBlue"
              IconImageSource="hamburger.png">
 
     <StackLayout>
         <ListView x:Name="listView"
                   x:FieldModifier="public">
+
+            <ListView.Header>
+                <StackLayout>
+                    <Image Source="RunsystemLogo.png"
+                           WidthRequest="250"
+                           HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"/>
+                </StackLayout>
+            </ListView.Header>
 
             <ListView.ItemsSource>
                 <x:Array Type="{x:Type local:MasterPageItems}">
@@ -23,6 +32,22 @@
                     <local:MasterPageItems Title="About Us"
                                            IconSource="black_about_us.png"
                                            TargetType="{x:Type local:AboutUs}" />
+                    <local:MasterPageItems Title="Achievements"
+                                           IconSource="black_trophy.png"
+                                           TargetType="{x:Type local:Achievements}" />
+                    <local:MasterPageItems Title="Services"
+                                           IconSource="black_service.png"
+                                           TargetType="{x:Type local:Services}" />
+                    <local:MasterPageItems Title="Products"
+                                           IconSource="black_product.png"
+                                           TargetType="{x:Type local:Products}" />
+                    <local:MasterPageItems Title="News"
+                                           IconSource="black_news.png"
+                                           TargetType="{x:Type local:News}" />
+                    <local:MasterPageItems Title="Recruitment"
+                                           IconSource="black_profiles.png"
+                                           TargetType="{x:Type local:Recruitment}" />
+
                 </x:Array>
             </ListView.ItemsSource>
 
