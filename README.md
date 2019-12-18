@@ -2,8 +2,8 @@
 
 ## Prerequisites
 * Development Environment
-- macOS: Visual Studio for Mac
-- Android: Visual Studio
+    - macOS: Visual Studio for Mac
+    - Android: Visual Studio
 * Xamarin.iOS
 * Xamarin.Android
 * Xamarin.Forms ^
