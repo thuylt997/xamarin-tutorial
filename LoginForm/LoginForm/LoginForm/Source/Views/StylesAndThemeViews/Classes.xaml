@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.StylesAndThemeViews.Classes"
+             Title="Style Classes">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--START create button styles-->
+            <Style x:Key="baseButtonClass"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="#ffffff" />
+                <Setter Property="BorderColor"
+                        Value="Black" />
+                <Setter Property="BorderWidth"
+                        Value="3" />
+            </Style>
+
+            <Style TargetType="Button"
+                   Class="SuccessButton"
+                   BasedOn="{StaticResource baseButtonClass}">
+                <Setter Property="BackgroundColor"
+                        Value="#449d44" />
+            </Style>
+
+            <Style TargetType="Button"
+                   Class="WarningButton"
+                   BasedOn="{StaticResource baseButtonClass}">
+                <Setter Property="BackgroundColor"
+                        Value="#ec971f" />
+            </Style>
+
+            <Style TargetType="Button"
+                   Class="DangerButton"
+                   BasedOn="{StaticResource baseButtonClass}">
+                <Setter Property="BackgroundColor"
+                        Value="#c9302c" />
+            </Style>
+            <!--END create button styles-->
+
+            <!--START create boxview styles-->
+            <Style TargetType="BoxView"
+                   Class="Separator">
+                <Setter Property="BackgroundColor"
+                        Value="#cccccc" />
+                <Setter Property="HeightRequest"
+                        Value="1" />
+            </Style>
+
+            <Style TargetType="BoxView"
+                   Class="Rounded">
+                <Setter Property="BackgroundColor"
+                        Value="#1faece" />
+                <Setter Property="HorizontalOptions"
+                        Value="Start" />
+                <Setter Property="CornerRadius"
+                        Value="10" />
+            </Style>
+
+            <Style TargetType="BoxView"
+                   Class="Circle">
+                <Setter Property="BackgroundColor"
+                        Value="#1faece" />
+                <Setter Property="WidthRequest"
+                        Value="100" />
+                <Setter Property="HeightRequest"
+                        Value="100" />
+                <Setter Property="HorizontalOptions"
+                        Value="Start" />
+                <Setter Property="CornerRadius"
+                        Value="50" />
+            </Style>
+            <!--END create boxview styles-->
+
+            <!--START create visual element-->
+            <Style TargetType="VisualElement"
+                   Class="Rotated"
+                   ApplyToDerivedTypes="True">
+                <Setter Property="Rotation"
+                        Value="20" />
+            </Style>
+            <!--END create visual element-->
+
+            <!--START create label styles-->
+            <Style TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="20" />
+                <Setter Property="TextColor"
+                        Value="Purple" />
+            </Style>
+
+            <Style x:Key="body"
+                   TargetType="Label"
+                   CanCascade="True">
+                <Setter Property="TextColor"
+                        Value="DarkGray" />
+                <Setter Property="FontAttributes"
+                        Value="Italic" />
+                <Setter Property="TextDecorations"
+                        Value="Underline" />
+                <Setter Property="Margin"
+                        Value="0, 20, 0, 10" />
+            </Style>
+            <!--END create label styles-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="Style Classes Example"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="The following controls are styled using a style class."
+                   Style="{StaticResource body}" />
+
+            <Button Text="Success"
+                    StyleClass="SuccessButton" />
+            <Button Text="Warning"
+                    StyleClass="WarningButton" />
+            <Button Text="Danger"
+                    StyleClass="DangerButton" />
+
+            <BoxView StyleClass="Separator"
+                     Margin="0, 20, 0, 0" />
+            <BoxView Margin="0, 20, 0, 0"
+                     WidthRequest="100"
+                     HeightRequest="100"
+                     HorizontalOptions="Center"
+                     StyleClass="Rounded, Rotated" />
+            <BoxView Margin="0, 20, 0, 0"
+                     HorizontalOptions="Center"
+                     StyleClass="Circle" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

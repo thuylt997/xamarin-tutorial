@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.TriggersTabViews.Actions"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.TriggersTabViews.Event"
+             Title="Event Triggers"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+                <Setter Property="BorderWidth"
+                        Value="3" />
+                <Setter Property="FontSize"
+                        Value="Medium" />
+                <Setter Property="CornerRadius"
+                        Value="10" />
+
+                <Style.Triggers>
+                    <EventTrigger Event="Clicked">
+                        <local:VisualElementPopTriggerAction />
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Event Triggers"
+                   FontSize="Large" />
+            <Label Text="Text must be a valid double or it will turn red." />
+
+            <Entry Placeholder="Enter a System.Double">
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:NumericValidationTriggerAction />
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Do this!"
+                        Clicked="OnDoThisClicked"/>
+
+                <Button Text="Do that!"
+                        Clicked="OnDoThatClicked" 
+                        Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

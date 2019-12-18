@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.TriggersTabViews.Property"
+             Title="Property Triggers"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Style.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused"
+                             Value="True">
+                        <Setter Property="BackgroundColor"
+                                Value="LightBlue" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Property Triggers"
+                   FontSize="Large"/>
+            <Label Text="BackgroundColor property change triggered by IsFocused"
+                   FontSize="Small" />
+
+            <Entry Placeholder="Enter your name">
+                <Entry.Triggers>
+                    <Trigger TargetType="Entry"
+                             Property="IsFocused"
+                             Value="True">
+                        <!--<Setter Property="BackgroundColor"
+                                Value="LightPink" />-->
+                    </Trigger>
+                </Entry.Triggers>
+            </Entry>
+
+            <Label Text="uncomment the Trigger in the Style to affect these inputs"
+                   FontSize="Small"
+                   FontAttributes="Italic" />
+
+            <Entry Placeholder="Enter your phone number" />
+            <Entry Placeholder="Enter your address" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

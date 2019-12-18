@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.TriggersTabViews"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.TriggersTabViews.Multi"
+             Title="Multi Triggers"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Multi Triggers"
+                   FontSize="Large" />
+            <Label Text="You must provide either an email or phone number (or both)" />
+
+            <Entry x:Name="email"
+                   Text=""
+                   Placeholder="Enter your email" />
+            <Entry x:Name="phone"
+                   Text=""
+                   Placeholder="Enter your phone" />
+
+            <Button x:Name="button"
+                    Text="Save"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    IsEnabled="True">
+                <!-- True value by default -->
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference email}, 
+                                                                Path=Text.Length}"
+                                              Value="0" />
+
+                            <BindingCondition Binding="{Binding Source={x:Reference phone}, 
+                                                                Path=Text.Length}"
+                                              Value="0" />
+                        </MultiTrigger.Conditions>
+
+                        <Setter Property="IsEnabled"
+                                Value="False" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <!--START Separator-->
+            <BoxView HorizontalOptions="CenterAndExpand"
+                     WidthRequest="250"
+                     HeightRequest="3"
+                     Color="Gray" />
+            <!--END Separator-->
+
+            <Label FontSize="Large"
+                   Text="Login Multi Triggers" />
+            <Label Text="You must provide BOTH username and password" />
+
+            <Entry x:Name="username"
+                   Placeholder="Enter your username"
+                   Text="" />
+            <Entry x:Name="password"
+                   Placeholder="password"
+                   Text="" />
+
+            <Button x:Name="loginButton"
+                    Text="Sign in"
+                    FontSize="Medium"
+                    HorizontalOptions="Center"
+                    IsEnabled="False">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference username}, 
+                                                                Path=Text.Length, 
+                                                                Converter={StaticResource dataHasBeenEntered}}"
+                                              Value="True" />
+
+                            <BindingCondition Binding="{Binding Source={x:Reference password},
+                                                                Path=Text.Length,
+                                                                Converter={StaticResource dataHasBeenEntered}}"
+                                              Value="True" />
+                        </MultiTrigger.Conditions>
+
+                        <Setter Property="IsEnabled"
+                                Value="True" />
+                    </MultiTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <Label Text="Uses a converter on BindingConditions."
+                   FontSize="Small" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

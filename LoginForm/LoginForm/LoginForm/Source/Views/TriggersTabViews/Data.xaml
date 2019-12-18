@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.TriggersTabViews.Data"
+             Title="Data Triggers"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Data Triggers"
+                   FontSize="Large" />
+            <Label Text="Entry requires length > 0 before button is enabled"
+                   FontSize="Small" />
+
+            <Entry x:Name="entry"
+                   Placeholder="Required field"
+                   Text="" />
+
+            <Button x:Name="button"
+                    Text="Save"
+                    FontSize="Medium"
+                    HorizontalOptions="Center">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button"
+                                 Value="0"
+                                 Binding="{Binding Source={x:Reference entry}, Path=Text.Length}">
+                        <Setter Property="IsEnabled"
+                                Value="False" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

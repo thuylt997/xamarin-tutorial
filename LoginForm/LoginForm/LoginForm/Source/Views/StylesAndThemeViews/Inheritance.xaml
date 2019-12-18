@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.StylesAndThemeViews.Inheritance"
+             Title="Style Inheritance">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseStyle"
+                   TargetType="View">
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+            </Style>
+
+            <Style x:Key="defaultStyle"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="30" />
+                <Setter Property="TextDecorations"
+                        Value="Underline" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout.Resources>
+                <ResourceDictionary>
+                    <Style x:Key="labelStyle"
+                           TargetType="Label"
+                           BasedOn="{StaticResource baseStyle}">
+                        <Setter Property="FontSize"
+                                Value="Large" />
+                        <Setter Property="FontAttributes"
+                                Value="Italic" />
+                        <Setter Property="TextColor"
+                                Value="Brown" />
+                    </Style>
+
+                    <Style x:Key="customLabelStyle"
+                           TargetType="Label"
+                           BasedOn="{StaticResource labelStyle}">
+                        <Setter Property="FontAttributes"
+                                Value="Bold" />
+                        <Setter Property="TextColor"
+                                Value="Gray" />
+                    </Style>
+
+                    <Style x:Key="customDefaultLabel"
+                           TargetType="Label"
+                           BasedOn="{StaticResource defaultStyle}">
+                        <Setter Property="HorizontalTextAlignment"
+                                Value="End" />
+                        <Setter Property="TextColor"
+                                Value="DeepPink" />
+                    </Style>
+
+                    <Style x:Key="buttonStyle"
+                           TargetType="Button"
+                           BasedOn="{StaticResource baseStyle}">
+                        <Setter Property="BorderColor"
+                                Value="Purple" />
+                        <Setter Property="CornerRadius"
+                                Value="20" />
+                        <Setter Property="BorderWidth"
+                                Value="5" />
+                        <Setter Property="WidthRequest"
+                                Value="200" />
+                        <Setter Property="TextColor"
+                                Value="White" />
+                        <Setter Property="BackgroundColor"
+                                Value="Black" />
+                    </Style>
+
+                    <Style x:Key="customButton"
+                           TargetType="Button"
+                           BasedOn="{StaticResource buttonStyle}">
+                        <Setter Property="Opacity"
+                                Value="0.5" />
+                        <Setter Property="Padding"
+                                Value="30" />
+                    </Style>
+                </ResourceDictionary>
+            </StackLayout.Resources>
+
+            <Label Text="These labels"
+                   Style="{StaticResource labelStyle}" />
+            <Label Text="are demonstrating"
+                   Style="{StaticResource customLabelStyle}" />
+            <Label Text="style inheritance"
+                   Style="{StaticResource customDefaultLabel}" />
+            <Button Text="So is the button"
+                    Style="{StaticResource customButton}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
