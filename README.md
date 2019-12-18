@@ -19,6 +19,15 @@ Xamarin is for developers with the following goals:
 - Share code, test and business logic across platforms.
 - Write cross-platform applications in C# with Visual Studio.
 
+### How Xamarin works
+<p align="center">
+    <img src="https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-images/xamarin-architecture.png" />
+</p>
+
+The diagram shows the overall architecture of a cross-platform Xamarin application. Xamarin allows you to create native UI on each platform and write business logic in C# that is shared across platforms. In most cases, 80% of application code is sharable using Xamarin.
+
+Xamarin is built on top of **Mono**, an open-source version of the .NET Framework based on the .NET ECMA standards. Mono has existed for almost as long as the .NET Framework itself, and runs on most platforms including Linux, Unix, FreeBSD, and macOS. The Mono execution environment automatically handles tasks such as memory allocation, garbage collection and interoperability with underlying platforms.
+
 ## Requirements
 * **Development Environment**
     - macOS: Visual Studio for Mac
