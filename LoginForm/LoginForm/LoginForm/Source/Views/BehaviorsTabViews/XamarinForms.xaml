@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.BehaviorsTabViews.Behaviors"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.BehaviorsTabViews.XamarinForms"
+             Title="Xamarin.Forms"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="NumericValidationStyle"
+                   TargetType="Entry">
+                <Setter Property="local:NumericValidationBehaviorXForms.AttachBehavior"
+                        Value="True" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Xamarin.Forms Behaviors"
+                   FontSize="Large" />
+            <Label Text="Red when the number isn't valid"
+                   FontSize="Small" />
+
+            <StackLayout Margin="10, 30, 10, 20">
+                <!--Xamarin.Forms Behavior without Style-->
+                <Label Text="Xamarin.Forms Behavior without Style"
+                       FontSize="Medium" />
+                <Entry Placeholder="Enter a System.Double">
+                    <Entry.Behaviors>
+                        <local:NumericValidationBehaviorXForms />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <BoxView HeightRequest="1"
+                         Margin="5" />
+
+                <!--Xamarin.Forms Behavior with a Style-->
+                <Label Text="Xamarin.Forms Behavior with a Style"
+                       FontSize="Medium" />
+                <Entry Placeholder="Enter a System.Double"
+                       Style="{StaticResource NumericValidationStyle}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

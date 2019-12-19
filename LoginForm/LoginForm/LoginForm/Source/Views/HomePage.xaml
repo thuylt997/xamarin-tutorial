@@ -131,12 +131,18 @@
                           Detail="The examples with different styles and theme"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:StylesAndTheme}" />
-                
+
                 <!--Triggers-->
                 <TextCell Text="Triggers Example"
                           Detail="Expressing actions declaratively in XAML"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:TriggersExample}" />
+
+                <!--Behaviors-->
+                <TextCell Text="Behaviors Example"
+                          Detail="Creating a Behaviors Example"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:BehaviorsExample}" />
             </TableSection>
         </TableRoot>
     </TableView>

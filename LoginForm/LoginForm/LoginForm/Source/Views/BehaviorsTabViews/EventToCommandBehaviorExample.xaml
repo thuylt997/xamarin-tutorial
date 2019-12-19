@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.BehaviorsTabViews"
+             xmlns:local1="clr-namespace:LoginForm.Source.Views.BehaviorsTabViews.Behaviors"
+             xmlns:local2="clr-namespace:LoginForm.Source.Views.BehaviorsTabViews.Converters"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.BehaviorsTabViews.EventToCommandBehaviorExample"
+             Title="Event to Command"
+             Padding="20">
+
+    <!--START Binding Context-->
+    <ContentPage.BindingContext>
+        <local:ViewModel />
+    </ContentPage.BindingContext>
+    <!--END Binding Context-->
+
+    <!--START Create Resources-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local2:ValueConversion x:Key="SelectedItemConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--END Create Resources-->
+
+    <!--START Create UI Views-->
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Text="Welcome to Xamarin.Forms!"
+                   FontSize="Large" />
+
+            <ListView ItemsSource="{Binding People}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Behaviors>
+                    <local1:EventToCommandBehavior EventName="ItemSelected"
+                                                   Command="{Binding OutputAgeCommand}"
+                                                   Converter="{StaticResource SelectedItemConverter}" />
+                </ListView.Behaviors>
+            </ListView>
+
+            <Label Text="{Binding SelectedItemText}" />
+        </StackLayout>
+    </ContentPage.Content>
+    <!--END Create UI Views-->
+</ContentPage>
