@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CssStylingXFormsApp"
+             Title="CSS Styling">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="./CssStylingXFormsAppDir/Assets/Styles.css" />
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listView"
+                      ItemsSource="{Binding Monkeys}"
+                      HasUnevenRows="True"
+                      ItemTapped="OnListViewItemTapped"
+                      ItemSelected="OnListViewItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <Image Source="{Binding ImageUrl}"
+                                       Aspect="AspectFill"
+                                       Grid.RowSpan="2" />
+                                <Label Text="{Binding Name}"
+                                       StyleClass="mainPageTitle"
+                                       Grid.Column="1" />
+                                <Label Text="{Binding Location}"
+                                       StyleClass="mainPageSubtitle"
+                                       Grid.Row="1"
+                                       Grid.Column="1" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

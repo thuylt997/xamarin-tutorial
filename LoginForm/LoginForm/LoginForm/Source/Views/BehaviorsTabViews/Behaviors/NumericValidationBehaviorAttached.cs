@@ -13,15 +13,9 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
                 propertyChanged: OnAttachBehaviorChanged    // attachBehaviorProperty registers this propertyChanged as a method.
             );
 
-        public static bool GetAttachBehavior(BindableObject view)
-        {
-            return (bool)view.GetValue(AttachBehaviorProperty);
-        }
+        public static bool GetAttachBehavior(BindableObject view) => (bool)view.GetValue(AttachBehaviorProperty);
 
-        public static void SetAttachBehavior(BindableObject view, bool value)
-        {
-            view.SetValue(AttachBehaviorProperty, value);
-        }
+        public static void SetAttachBehavior(BindableObject view, bool value) => view.SetValue(AttachBehaviorProperty, value);
 
         // OnAttachBehaviorChanged method will be executed when the value of the property changes.
         static void OnAttachBehaviorChanged(BindableObject view, object oldValue, object newValue)
@@ -48,6 +42,7 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
             }
         }
 
+        // The core functionality of the behavior is provided by the OnEntryTextChanged method.
         static void OnEntryTextChanged(object sender, TextChangedEventArgs e)
         {
             double result;

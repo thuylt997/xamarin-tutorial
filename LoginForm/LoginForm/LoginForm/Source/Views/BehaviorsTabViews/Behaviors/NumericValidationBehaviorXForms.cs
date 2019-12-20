@@ -5,7 +5,9 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
 {
     public class NumericValidationBehaviorXForms : Behavior<Entry>
     {
-        // Xamarin.Forms Behavior with a Style
+        /**
+         * START Xamarin.Forms Behavior with a Style
+         */
         public static readonly BindableProperty AttachBehaviorProperty =
             BindableProperty.CreateAttached(
                 "AttachBehavior",
@@ -15,15 +17,9 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
                 propertyChanged: OnAttachBehaviorChanged
             );
 
-        public static bool GetAttachBehavior(BindableObject view)
-        {
-            return (bool)view.GetValue(AttachBehaviorProperty);
-        }
+        public static bool GetAttachBehavior(BindableObject view) => (bool)view.GetValue(AttachBehaviorProperty);
 
-        public static void SetAttachBehavior(BindableObject view, bool value)
-        {
-            view.SetValue(AttachBehaviorProperty, value);
-        }
+        public static void SetAttachBehavior(BindableObject view, bool value) => view.SetValue(AttachBehaviorProperty, value);
 
         static void OnAttachBehaviorChanged(BindableObject view, object oldValue, object newValue)
         {
@@ -50,17 +46,26 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
                 }
             }
         }
+        /**
+         * END Xamarin.Forms Behavior with a Style
+         */
 
-        // Xamarin.Forms Behavior without Style
+        /**
+         * START Xamarin.Forms Behavior without Style
+         */
+        // The OnAttachedTo method is fired immediately after the behavior is attached to a control.
         protected override void OnAttachedTo(Entry bindable)
         {
             bindable.TextChanged += OnEntryTextChanged;
+
             base.OnAttachedTo(bindable);
         }
 
+        // The OnDetachingFrom method is fired when the behavior is removed from the control.
         protected override void OnDetachingFrom(Entry bindable)
         {
             bindable.TextChanged -= OnEntryTextChanged;
+
             base.OnDetachingFrom(bindable);
         }
 
@@ -71,5 +76,8 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
 
             ((Entry)sender).TextColor = isValid ? Color.Default : Color.Red;
         }
+        /**
+         * END Xamarin.Forms Behavior without Style
+         */
     }
 }

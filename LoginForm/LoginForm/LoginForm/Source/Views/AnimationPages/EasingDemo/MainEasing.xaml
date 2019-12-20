@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.AnimationPages.EasingDemo.MainEasing"
+             Title="Easing Functions"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image x:Name="image"
+                   Source="ThisIsMe.jpg"
+                   VerticalOptions="StartAndExpand"
+                   HeightRequest="200" />
+
+            <Label Text="Select easing function:" />
+
+            <Picker x:Name="picker"
+                    SelectedIndexChanged="OnSelectedPickerIndexChanged" />
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Duration:"
+                       VerticalOptions="Center" />
+
+                <Entry x:Name="entry"
+                       Text="2000" />
+
+                <Label Text="ms"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <Button Text="Run Animation"
+                    Clicked="OnRunAnimationButtonClicked"
+                    VerticalOptions="End" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

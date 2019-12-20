@@ -5,6 +5,10 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
 {
     public class BehaviorBase<T> : Behavior<T> where T : BindableObject
     {
+        /**
+         * In this example, T is View which means it can apply
+         * to any UI Controls that derive from View.
+         */
         public T AssociatedObject { get; private set; }
 
         protected override void OnAttachedTo(T bindable)
@@ -28,10 +32,7 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
             AssociatedObject = null;
         }
 
-        void OnBindingContextChanged(object sender, EventArgs e)
-        {
-            OnBindingContextChanged();
-        }
+        void OnBindingContextChanged(object sender, EventArgs e) => OnBindingContextChanged();
 
         protected override void OnBindingContextChanged()
         {

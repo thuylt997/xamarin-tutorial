@@ -27,7 +27,7 @@
                    FontSize="Small" />
 
             <StackLayout Margin="10, 30, 10, 20">
-                <!--Xamarin.Forms Behavior without Style-->
+                <!--START Xamarin.Forms Behavior without Style-->
                 <Label Text="Xamarin.Forms Behavior without Style"
                        FontSize="Medium" />
                 <Entry Placeholder="Enter a System.Double">
@@ -35,15 +35,19 @@
                         <local:NumericValidationBehaviorXForms />
                     </Entry.Behaviors>
                 </Entry>
+                <!--END Xamarin.Forms Behavior without Style-->
 
+                <!--START Separator-->
                 <BoxView HeightRequest="1"
                          Margin="5" />
+                <!--END Separator-->
 
-                <!--Xamarin.Forms Behavior with a Style-->
+                <!--START Xamarin.Forms Behavior with a Style-->
                 <Label Text="Xamarin.Forms Behavior with a Style"
                        FontSize="Medium" />
                 <Entry Placeholder="Enter a System.Double"
                        Style="{StaticResource NumericValidationStyle}" />
+                <!--END Xamarin.Forms Behavior with a Style-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

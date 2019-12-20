@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CssStylingXFormsAppDir.Views.Detail"
+             Title="{Binding Name, StringFormat='{0} Detail'}"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Assets/Styles.css" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="{Binding Name}"
+                   StyleClass="detailPageTitle" />
+
+            <Label Text="{Binding Location}"
+                   StyleClass="detailPageSubtitle" />
+
+            <Image Source="{Binding ImageUrl}" />
+
+            <Label Text="{Binding Details}" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

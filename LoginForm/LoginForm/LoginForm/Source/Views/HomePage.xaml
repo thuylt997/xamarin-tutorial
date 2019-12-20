@@ -143,6 +143,18 @@
                           Detail="Creating a Behaviors Example"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:BehaviorsExample}" />
+
+                <!--Styling Xamarin.Forms Apps using CSS-->
+                <TextCell Text="CSS Styling Example"
+                          Detail="Styling X.Forms Apps using CSS"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CssStylingXFormsApp}" />
+
+                <!--Animation-->
+                <TextCell Text="Animation Example"
+                          Detail="Creating simple animations"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:AnimationExample}" />
             </TableSection>
         </TableRoot>
     </TableView>

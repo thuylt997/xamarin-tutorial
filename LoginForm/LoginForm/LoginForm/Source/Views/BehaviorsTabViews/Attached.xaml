@@ -16,10 +16,23 @@
             <Label Text="Red when the number isn't valid"
                    FontSize="Small" />
 
-            <!--Adding an Attached Behavior from a control by setting the AttachBehavior attached property to True-->
-            <!--Removing an Attached Behavior from a control by setting the AttachBehavior attached property to False-->
-            <Entry Placeholder="Enter a System.Double"
-                   local:NumericValidationBehaviorAttached.AttachBehavior="True" />
+            <StackLayout Margin="20">
+                <!--Adding an Attached Behavior from a control by setting the AttachBehavior attached property to True-->
+                <Label Text="Adding an Attached Behavior from a control" />
+                <Entry Placeholder="Enter a System.Double"
+                       local:NumericValidationBehaviorAttached.AttachBehavior="True" />
+
+                <!--START Separator-->
+                <BoxView HeightRequest="1"
+                         Margin="0, 10, 0, 10" />
+                <!--END Separator-->
+
+                <!--Removing an Attached Behavior from a control by setting the AttachBehavior attached property to False-->
+                <Label Text="Removing an Attached Behavior from a control" />
+                <Entry Placeholder="Enter a System.Double"
+                       local:NumericValidationBehaviorAttached.AttachBehavior="False" />
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

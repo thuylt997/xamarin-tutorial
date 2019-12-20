@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.AnimationPages.CustomAnimation.ColorAnimationPage"
+             Title="Custom Color Animation"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <BoxView x:Name="boxView"
+                     Color="Blue"
+                     HeightRequest="100"
+                     HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Animate BoxView"
+                    Clicked="OnAnimateBoxViewButtonClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+
+            <Label x:Name="label"
+                   Text="Lorem ipsum dolor sit amet"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <Button Text="Animate Label"
+                    Clicked="OnAnimateLabelButtonClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+
+            <Button Text="Animate Page Background"
+                    Clicked="OnAnimatePageBackgroundButtonClicked"
+                    HorizontalOptions="Center"
+                    VerticalOptions="CenterAndExpand" />
+
+            <Button x:Name="cancelButton"
+                    Text="Cancel Animation"
+                    Clicked="OnCancelAnimationButtonClicked"
+                    IsEnabled="false" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

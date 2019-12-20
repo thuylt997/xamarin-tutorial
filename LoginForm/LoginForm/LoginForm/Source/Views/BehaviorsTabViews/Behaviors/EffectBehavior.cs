@@ -22,14 +22,14 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Behaviors
 
         public string Group
         {
-            get { return (string)GetValue(GroupProperty); }
-            set { SetValue(GroupProperty, value); }
+            get => (string)GetValue(GroupProperty);
+            set => SetValue(GroupProperty, value);
         }
 
         public string Name
         {
-            get { return (string)GetValue(NameProperty); }
-            set { SetValue(NameProperty, value); }
+            get => (string)GetValue(NameProperty);
+            set => SetValue(NameProperty, value);
         }
 
         protected override void OnAttachedTo(BindableObject bindable)

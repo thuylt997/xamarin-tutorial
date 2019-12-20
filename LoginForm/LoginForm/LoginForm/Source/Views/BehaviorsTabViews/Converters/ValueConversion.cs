@@ -15,12 +15,10 @@ namespace LoginForm.Source.Views.BehaviorsTabViews.Converters
         {
             var eventArgs = value as SelectedItemChangedEventArgs;
 
+            // Convert SelectedItemEventArgs to SelectedItem.
             return eventArgs.SelectedItem;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();
     }
 }
