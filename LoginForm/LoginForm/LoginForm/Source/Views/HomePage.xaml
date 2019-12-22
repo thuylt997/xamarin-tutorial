@@ -98,7 +98,7 @@
                 <TextCell Text="Basic Slider Example"
                           Detail="Use a Slider for selecting from a range of continuous values"
                           Command="{Binding NavigateCommand}"
-                          CommandParameter="{x:Type local:Slider}" />
+                          CommandParameter="{x:Type local:SliderMainPage}" />
             </TableSection>
 
             <TableSection Title="Week 02"
