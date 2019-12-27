@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.BasicCodeBinding"
+             Title="Basic Code"
+             Padding="20"
+             BackgroundColor="LightGray">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <!--Title-->
+            <Label Text="Basic Code Binding"
+                   FontSize="Large" />
+
+            <!--This label is the binding target-->
+            <Label x:Name="label"
+                   Text="TEXT"
+                   FontSize="48"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+
+            <!--This slider is the binding source-->
+            <Slider x:Name="slider"
+                    Maximum="360"
+                    VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

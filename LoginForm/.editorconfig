@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# CS0612: Type or member is obsolete
+dotnet_diagnostic.CS0612.severity = none
+
+# CS0108: Member hides inherited member; missing new keyword
+dotnet_diagnostic.CS0108.severity = none

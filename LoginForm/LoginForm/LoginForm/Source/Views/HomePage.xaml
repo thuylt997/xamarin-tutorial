@@ -12,7 +12,7 @@
     <TableView Intent="Menu">
         <TableRoot>
             <TableSection Title="Week 01"
-                          TextColor="Red">
+                          TextColor="Black">
 
                 <!--Grid Layout-->
                 <TextCell Text="Grid Layout Example"
@@ -102,7 +102,7 @@
             </TableSection>
 
             <TableSection Title="Week 02"
-                          TextColor="Red">
+                          TextColor="Black">
 
                 <!--Navigation-->
                 <TextCell Text="TabbedPage with Page Collection"
@@ -155,6 +155,34 @@
                           Detail="Creating simple animations"
                           Command="{Binding NavigateCommand}"
                           CommandParameter="{x:Type local:AnimationExample}" />
+            </TableSection>
+
+            <TableSection Title="Week 03"
+                          TextColor="Black">
+
+                <!--Custom Renderer-->
+                <TextCell Text="Custom Renderers Examples"
+                          Detail="Customize the appearance and behavior of Xamarin.Forms controls"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CustomRenderersMainPage}" />
+
+                <!--Data Binding-->
+                <TextCell Text="Data Binding Examples"
+                          Detail="An integral part of the Model-View-ViewModel (MVVM) application architecture."
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:DataBindingMainPage}" />
+
+                <!--Command Interface-->
+                <TextCell Text="Command Interface Examples"
+                          Detail="Creating a Basic Commanding App"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:CommandInterfaceMainPage}" />
+
+                <!--Gestures Recognizer-->
+                <TextCell Text="Gestures Recognizer Examples"
+                          Detail="Creating a Gestures Recognizer App"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="{x:Type local:GesturesMainPage}" />
             </TableSection>
         </TableRoot>
     </TableView>

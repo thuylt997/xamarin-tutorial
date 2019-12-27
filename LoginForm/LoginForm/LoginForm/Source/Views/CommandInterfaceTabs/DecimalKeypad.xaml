@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.CommandInterfaceTabs.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CommandInterfaceTabs.DecimalKeypad"
+             Title="Decimal Keypad"
+             Padding="20">
+
+    <ContentPage.Content>
+        <Grid WidthRequest="400"
+              HeightRequest="550"
+              ColumnSpacing="2"
+              RowSpacing="2"
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+
+            <!--START - Binding Context Definition-->
+            <Grid.BindingContext>
+                <local:DecimalKeypadViewModel />
+            </Grid.BindingContext>
+            <!--END - Binding Context Definition-->
+
+            <!--START - Resources Definition-->
+            <Grid.Resources>
+                <ResourceDictionary>
+                    <Style TargetType="Button">
+
+                        <Setter Property="FontSize"
+                                Value="32" />
+
+                        <Setter Property="BorderWidth"
+                                Value="1" />
+
+                        <Setter Property="BorderColor"
+                                Value="Black" />
+                    </Style>
+                </ResourceDictionary>
+            </Grid.Resources>
+            <!--END - Resources Definition-->
+
+            <!--START - Creating the first row-->
+            <Label Text="{Binding EntryTextDefault}"
+                   FontSize="50"
+                   BackgroundColor="AntiqueWhite"
+                   LineBreakMode="HeadTruncation"
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="End"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="4" />
+
+            <Button Text="CLEAR"
+                    Command="{Binding ClearCommand}"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2" />
+
+            <Button Text="&#x21E6;"
+                    FontAttributes="Bold"
+                    FontSize="50"
+                    Command="{Binding BackspaceCommand}"
+                    Grid.Row="1"
+                    Grid.Column="2" />
+
+            <Button Text="%"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="%"
+                    Grid.Row="1"
+                    Grid.Column="3" />
+            <!--END - Creating the first row-->
+
+            <!--START - Creating the second row-->
+            <Button Text="7"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="7"
+                    Grid.Row="2"
+                    Grid.Column="0" />
+
+            <Button Text="8"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="8"
+                    Grid.Row="2"
+                    Grid.Column="1" />
+
+            <Button Text="9"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="9"
+                    Grid.Row="2"
+                    Grid.Column="2" />
+
+            <Button Text="/"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="/"
+                    Grid.Row="2"
+                    Grid.Column="3" />
+            <!--END - Creating the second row-->
+
+            <!--START - Creating the third row-->
+            <Button Text="4"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="4"
+                    Grid.Row="3"
+                    Grid.Column="0" />
+
+            <Button Text="5"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="5"
+                    Grid.Row="3"
+                    Grid.Column="1" />
+
+            <Button Text="6"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="6"
+                    Grid.Row="3"
+                    Grid.Column="2" />
+
+            <Button Text="X"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="*"
+                    Grid.Row="3"
+                    Grid.Column="3" />
+            <!--END - Creating the third row-->
+
+            <!--START - Creating the fourth row-->
+            <Button Text="1"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="1"
+                    Grid.Row="4"
+                    Grid.Column="0" />
+
+            <Button Text="2"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="2"
+                    Grid.Row="4"
+                    Grid.Column="1" />
+
+            <Button Text="3"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="3"
+                    Grid.Row="4"
+                    Grid.Column="2" />
+
+            <Button Text="-"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="-"
+                    Grid.Row="4"
+                    Grid.Column="3" />
+            <!--END - Creating the fourth row-->
+
+            <!--START - Creating the fifth row-->
+            <Button Text="0"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="0"
+                    Grid.Row="5"
+                    Grid.Column="0" />
+
+            <Button Text="&#x00B7;"
+                    FontSize="50"
+                    FontAttributes="Bold"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="."
+                    Grid.Row="5"
+                    Grid.Column="1" />
+
+            <Button Text="="
+                    Grid.Row="5"
+                    Grid.Column="2" />
+
+            <Button Text="+"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="+"
+                    Grid.Row="5"
+                    Grid.Column="3" />
+            <!--END - Creating the fifth row-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

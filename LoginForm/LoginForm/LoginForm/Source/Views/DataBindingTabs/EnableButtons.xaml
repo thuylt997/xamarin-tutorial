@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.DataBindingTabs.Converters"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.EnableButtons"
+             Title="Enable Buttons"
+             Padding="20">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:IntToBoolConverter x:Key="intToBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+
+            <Label Text="Enable Buttons - Binding Value Converters"
+                   FontSize="Large" />
+
+            <Entry x:Name="entry1"
+                   Text=""
+                   Placeholder="Enter search term" />
+
+            <Button Text="Search"
+                    HorizontalOptions="Center"
+                    IsEnabled="{Binding Source={x:Reference entry1},
+                                        Path=Text.Length,
+                                        Converter={StaticResource intToBoolConverter},
+                                        Mode=OneWay}" />
+
+            <Entry x:Name="entry2"
+                   Text=""
+                   Placeholder="Enter destination" />
+
+            <Button Text="Submit"
+                    HorizontalOptions="Center"
+                    IsEnabled="{Binding Source={x:Reference entry2},
+                                        Path=Text.Length,
+                                        Converter={StaticResource intToBoolConverter},
+                                        Mode=TwoWay}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

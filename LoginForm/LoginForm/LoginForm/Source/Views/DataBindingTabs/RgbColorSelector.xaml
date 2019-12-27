@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.DataBindingTabs.Converters"
+             xmlns:local1="clr-namespace:LoginForm.Source.Views.DataBindingTabs.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.RgbColorSelector"
+             Title="RGB Color Selector"
+             Padding="20"
+             BackgroundColor="LightGray">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Slider">
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand" />
+            </Style>
+
+            <Style TargetType="Label">
+                <Setter Property="HorizontalTextAlignment"
+                        Value="Center" />
+            </Style>
+
+            <local:DoubleToIntConverter x:Key="doubleToIntConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout.BindingContext>
+                <local1:RgbColorViewModel Color="LightSalmon" />
+            </StackLayout.BindingContext>
+
+            <Label Text="RGB Color Selector"
+                   FontSize="Large" />
+
+            <BoxView Color="{Binding Color}"
+                     HeightRequest="200"
+                     CornerRadius="20"
+                     VerticalOptions="Center"
+                     Margin="0, 20, 0, 0" />
+
+            <StackLayout Spacing="10">
+                <!--Color name-->
+                <Label Text="{Binding Name}"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       Margin="0, 20, 0, 20" />
+
+                <!--START - Displaying with a Binding markup extension-->
+                <Slider Value="{Binding Red}" />
+                <Label Text="{Binding Path=Red, 
+                                      Converter={StaticResource doubleToIntConverter},
+                                      ConverterParameter=255,
+                                      StringFormat='Red = {0:X2}'}" />
+
+                <BoxView HeightRequest="1"
+                         Margin="5" />
+
+                <Slider Value="{Binding Green}" />
+                <Label Text="{Binding Green,
+                                      Converter={StaticResource doubleToIntConverter},
+                                      ConverterParameter=255,
+                                      StringFormat='Green = {0:X2}'}" />
+                <!--END - Displaying with a Binding markup extension-->
+
+                <BoxView HeightRequest="1"
+                         Margin="5" />
+
+                <Slider Value="{Binding Blue}" />
+                <Label>
+                    <Label.Text>
+                        <Binding Path="Blue"
+                                 StringFormat="Blue = {0:X2}"
+                                 Converter="{StaticResource doubleToIntConverter}">
+                            <Binding.ConverterParameter>
+                                <x:Double>
+                                    255
+                                </x:Double>
+                            </Binding.ConverterParameter>
+                        </Binding>
+                    </Label.Text>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

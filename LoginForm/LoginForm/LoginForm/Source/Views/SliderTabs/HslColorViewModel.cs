@@ -15,7 +15,6 @@ namespace LoginForm.Source.Views.SliderTabs
             {
                 if (color.Hue != value)
                 {
-                {
                     Color = Color.FromHsla(value, color.Saturation, color.Luminosity);
                 }
             }

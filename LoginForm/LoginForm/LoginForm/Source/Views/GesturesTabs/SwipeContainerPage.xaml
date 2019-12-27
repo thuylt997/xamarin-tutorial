@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.GesturesTabs.Containers"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.GesturesTabs.SwipeContainerPage"
+             Title="Swipe Container"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Swipe Container"
+                   FontSize="Large" />
+
+            <Label Text="Swipe inside the box with a single finger." />
+
+            <local:SwipeContainer SwipeEventHandler="OnSwiped"
+                                  HorizontalOptions="Center"
+                                  VerticalOptions="CenterAndExpand">
+                <BoxView Color="LightGreen"
+                         WidthRequest="300"
+                         HeightRequest="300" />
+            </local:SwipeContainer>
+
+            <Label x:Name="label"
+                   Text="You swiped: " />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

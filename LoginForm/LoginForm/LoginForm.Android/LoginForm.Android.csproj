@@ -64,13 +64,19 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CameraPageRenderer.cs" />
     <Compile Include="Data\SqliteAndroid.cs" />
     <Compile Include="LabelShadowEffect.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MyEntryRenderer.cs" />
+    <Compile Include="RadioButtonRenderer.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
@@ -163,7 +169,18 @@
     <AndroidResource Include="Resources\drawable\black_profiles.png" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\drawable\basketball.png" />
+    <AndroidResource Include="Resources\drawable\hamber.png" />
+    <AndroidResource Include="Resources\drawable\gridiron.png" />
+    <AndroidResource Include="Resources\drawable\football.png" />
+    <AndroidResource Include="Resources\drawable\csharp.png" />
+    <AndroidResource Include="Resources\drawable\MonoMonkey.jpg" />
     <Content Include="Resources\drawable\rs01.jpg" />
+    <AndroidResource Include="Resources\drawable\xaml.png" />
+    <AndroidResource Include="Resources\drawable\tapped.jpg" />
+    <AndroidResource Include="Resources\drawable\tapped_bw.jpg" />
+    <AndroidResource Include="Resources\drawable\waterfront.jpg" />
+    <Content Include="Resources\layout\CameraLayout.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.DataBindingTabs.Converters"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.SwitchIndicators"
+             Title="Switch Indicators"
+             Padding="20">
+
+    <!--START - Resources of Content Page-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="18" />
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+                <Setter Property="TextColor"
+                        Value="Blue" />
+            </Style>
+
+            <Style TargetType="Switch">
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--END - Resources of Content Page-->
+
+    <ContentPage.Content>
+        <StackLayout Spacing="50">
+
+            <!--Title-->
+            <Label Text="Switch Indicators - Binding Value Converters"
+                   FontSize="Large" />
+
+            <!--START - Creating Switch 1-->
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Center">
+
+                <Label Text="Subcribe?" />
+
+                <Switch x:Name="switch1" />
+
+                <Label>
+                    <Label.Text>
+                        <Binding Source="{x:Reference switch1}"
+                                 Path="IsToggled">
+                            <Binding.Converter>
+                                <local:BoolToObjectConverter x:TypeArguments="x:String"
+                                                             TrueObject="Of course!"
+                                                             FalseObject="No way!" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Label.Text>
+                </Label>
+            </StackLayout>
+            <!--END - Creating Switch 1-->
+
+            <!--START - Creating Switch 2-->
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Center">
+
+                <Label Text="Allow pop-ups?" />
+
+                <Switch x:Name="switch2" />
+
+                <Label>
+                    <Label.Text>
+                        <Binding Source="{x:Reference switch2}"
+                                 Path="IsToggled">
+                            <Binding.Converter>
+                                <local:BoolToObjectConverter x:TypeArguments="x:String"
+                                                             TrueObject="Yes"
+                                                             FalseObject="No" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Label.Text>
+
+                    <Label.TextColor>
+                        <Binding Source="{x:Reference switch2}"
+                                 Path="IsToggled">
+                            <Binding.Converter>
+                                <local:BoolToObjectConverter x:TypeArguments="Color"
+                                                             TrueObject="Green"
+                                                             FalseObject="Red" />
+                            </Binding.Converter>
+                        </Binding>
+                    </Label.TextColor>
+                </Label>
+            </StackLayout>
+            <!--END - Creating Switch 2-->
+
+            <!--START - Creating Switch 3-->
+            <StackLayout Orientation="Horizontal"
+                         VerticalOptions="Center">
+
+                <Label Text="Learn more?" />
+
+                <Switch x:Name="switch3" />
+
+                <Label FontSize="18"
+                       VerticalOptions="Center">
+
+                    <Label.Style>
+                        <Binding Source="{x:Reference switch3}"
+                                 Path="IsToggled">
+                            <Binding.Converter>
+                                <local:BoolToObjectConverter x:TypeArguments="Style">
+                                    <!--START - Creating Label View with TrueObject-->
+                                    <local:BoolToObjectConverter.TrueObject>
+                                        <Style TargetType="Label">
+                                            <Setter Property="Text"
+                                                    Value="Indubitably!" />
+                                            <Setter Property="FontAttributes"
+                                                    Value="Italic, Bold" />
+                                            <Setter Property="TextColor"
+                                                    Value="Green" />
+                                        </Style>
+                                    </local:BoolToObjectConverter.TrueObject>
+                                    <!--END - Creating Label View with TrueObject-->
+
+                                    <!--START - Creating Label View with FalseObject-->
+                                    <local:BoolToObjectConverter.FalseObject>
+                                        <Style TargetType="Label">
+                                            <Setter Property="Text"
+                                                    Value="Maybe later" />
+                                            <Setter Property="FontAttributes"
+                                                    Value="None" />
+                                            <Setter Property="TextColor"
+                                                    Value="Red" />
+                                        </Style>
+                                    </local:BoolToObjectConverter.FalseObject>
+                                    <!--END - Creating Label View with FalseObject-->
+                                </local:BoolToObjectConverter>
+                            </Binding.Converter>
+                        </Binding>
+                    </Label.Style>
+                </Label>
+            </StackLayout>
+            <!--END - Creating Switch 3-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

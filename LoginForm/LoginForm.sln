@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginForm.Android", "LoginF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginForm.iOS", "LoginForm\LoginForm.iOS\LoginForm.iOS.csproj", "{37707BDA-A8CB-4EDF-A362-D6BF68706B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoginForm", "LoginForm\LoginForm\LoginForm.csproj", "{C58E1ECB-DA42-4A29-A197-0BF5AE19B85D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginForm", "LoginForm\LoginForm\LoginForm.csproj", "{C58E1ECB-DA42-4A29-A197-0BF5AE19B85D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4BE3556-292E-440C-AA08-BFF046F6EB8B}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

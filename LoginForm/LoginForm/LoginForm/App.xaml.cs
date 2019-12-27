@@ -1,5 +1,6 @@
 ﻿using LoginForm.Source.Data;
 using LoginForm.Source.Views;
+using LoginForm.Source.Views.DataBindingTabs.ViewModel;
 using System;
 using System.IO;
 using Xamarin.Forms;
@@ -10,6 +11,8 @@ namespace LoginForm
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class App : Application
     {
+        public SampleSettingsViewModel Settings { get; private set; }
+
         static UserDbController userDbController;
         static TokenDbController tokenDbController;
         static Database database;
@@ -31,7 +34,10 @@ namespace LoginForm
             {
                 if (database == null)
                 {
-                    database = new Database(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "people.db3"));
+                    database = new Database(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+                        "people.db3")
+                    );
                 }
 
                 return database;
@@ -42,6 +48,7 @@ namespace LoginForm
         {
             InitializeComponent();
 
+            Settings = new SampleSettingsViewModel(Current.Properties);
             MainPage = new NavigationPage(new HomePage());
         }
 
@@ -57,15 +64,14 @@ namespace LoginForm
 
         protected override void OnSleep()
         {
+            Settings.SaveState(Current.Properties);
+
             Console.WriteLine("OnSleep() is executed");
 
             Properties[displayText] = DisplayText;
         }
 
-        protected override void OnResume()
-        {
-            Console.WriteLine("OnResume() is executed");
-        }
+        protected override void OnResume() => Console.WriteLine("OnResume() is executed");
 
         public static UserDbController UserDatabase
         {

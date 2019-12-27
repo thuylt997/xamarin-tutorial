@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.BindingContextInheritance"
+             Title="Binding Context Inheritance"
+             Padding="20"
+             BackgroundColor="LightGray">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+
+            <Label Text="Binding Context Inheritance"
+                   FontSize="Large" />
+
+            <StackLayout VerticalOptions="FillAndExpand"
+                         BindingContext="{x:Reference slider}">
+
+                <Label Text="TEXT"
+                       FontSize="80"
+                       HorizontalOptions="Center"
+                       VerticalOptions="EndAndExpand"
+                       Margin="0, 0, 0, 100"
+                       Rotation="{Binding Value}" />
+
+                <BoxView Color="#800000FF"
+                         WidthRequest="180"
+                         HeightRequest="40"
+                         HorizontalOptions="Center"
+                         VerticalOptions="StartAndExpand"
+                         Margin="0, 0, 0, 50"
+                         Rotation="{Binding Value}" />
+            </StackLayout>
+
+            <Slider x:Name="slider"
+                    Maximum="360"
+                    Margin="0, 0, 0, 70" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

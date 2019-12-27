@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize"
+             xmlns:local1="clr-namespace:LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize.RadioButtonCustomRenderer"
+             Title="Radio Button"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <StackLayout.BindingContext>
+                <local1:RadioGroupDemoViewModel />
+            </StackLayout.BindingContext>
+            <Label Text="Radio Button Custom Renderer"
+                   FontSize="Large" />
+
+            <!--<local:BindableRadioGroup x:Name="MyRadioButtonGroup"
+                                      ItemsSource="{Binding ItemsSource}"
+                                      SelectedIndex="{Binding SelectedIndex}" />-->
+
+            <Label Text="Radio Button without Effect"
+                   FontSize="Small" />
+
+            <local:CustomRadioButton Checked="True"
+                                     Text="Checked"
+                                     Margin="20, 0, 20, 0"
+                                     BackgroundColor="LightBlue" />
+
+            <Label Text="Radio Button with Effect"
+                   FontSize="Small" />
+
+            <local:CustomRadioButton Checked="False"
+                                     Text="Unchecked"
+                                     Margin="20, 0, 20, 0"
+                                     BackgroundColor="LightGreen" />
+
+            <!--<local:BindableRadioGroup x:Name="MyRadioButtonGroup"
+                                      ItemsSource="{Binding Path=MyList.Values}"
+                                      SelectedIndex="{Binding SelectedIndex}" />-->
+
+            <!--<Label Text="Selected Item is:"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="selectedLabel"
+                   Text=""
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center" />-->
+
+            <!--<StackLayout Orientation="Horizontal">
+
+                <Label Text="Select The Index"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+
+                <Entry Text="{Binding SelectedIndex}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center" />
+            </StackLayout>-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

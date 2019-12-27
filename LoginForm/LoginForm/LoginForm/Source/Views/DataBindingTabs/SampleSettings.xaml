@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.DataBindingTabs.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.DataBindingTabs.SampleSettings"
+             Title="Sample Settings"
+             Padding="0"
+             BindingContext="{Binding Source={x:Static Application.Current},
+                                      Path=Settings}">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10"
+                     Padding="20"
+                     BackgroundColor="{Binding BackgroundColor}">
+
+            <!--Title-->
+            <Label Text="Sample Settings"
+                   FontSize="Large" />
+
+            <!--Name-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Name: "
+                       VerticalOptions="Center" />
+
+                <Entry Text="{Binding Name}"
+                       Placeholder="Enter your name"
+                       HorizontalOptions="FillAndExpand"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--Birth Date-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Birth Date: "
+                       VerticalOptions="Center" />
+
+                <DatePicker Date="{Binding BirthDate}"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--Code in C Sharp-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Do you code in C#?"
+                       VerticalOptions="Center" />
+
+                <Switch IsToggled="{Binding CodeInCSharp}"
+                        VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--Number of Copies-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Number of Copies: "
+                       VerticalOptions="Center" />
+
+                <Stepper Value="{Binding NumberOfCopies}"
+                         VerticalOptions="Center" />
+
+                <Label Text="{Binding NumberOfCopies}"
+                       VerticalOptions="Center" />
+            </StackLayout>
+
+            <!--Background name-->
+            <Label Text="BackgroundColor: " />
+
+            <!--List view contain colors-->
+            <ListView x:Name="colorListView"
+                      ItemsSource="{x:Static local:NamedColor.All}"
+                      SelectedItem="{Binding BackgroundNamedColor, Mode=TwoWay}"
+                      VerticalOptions="FillAndExpand"
+                      RowHeight="40 ">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <BoxView Color="{Binding Color}"
+                                         HeightRequest="32"
+                                         WidthRequest="32"
+                                         VerticalOptions="Center" />
+
+                                <Label Text="{Binding FriendlyName}"
+                                       FontSize="24"
+                                       VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

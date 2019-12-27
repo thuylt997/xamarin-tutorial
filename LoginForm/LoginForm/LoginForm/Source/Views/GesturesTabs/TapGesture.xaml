@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.GesturesTabs.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.GesturesTabs.TapGesture"
+             Title="Tap"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <StackLayout.BindingContext>
+                <local:TapViewModel />
+            </StackLayout.BindingContext>
+
+            <Label Text="Tap Gesture"
+                   FontSize="Large" />
+
+            <Image Source="tapped.jpg"
+                   HeightRequest="150"
+                   WidthRequest="150">
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="Image1" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <Frame OutlineColor="Accent"
+                   BackgroundColor="Transparent"
+                   Padding="20, 20"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand">
+
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="Frame1" />
+
+                    <!--<TapGestureRecognizer Tapped="OnTapGestureRecognizerTapped"
+                                          NumberOfTapsRequired="2" />-->
+                </Frame.GestureRecognizers>
+
+                <Label Text="Tap inside frame (or on the monkey!)"
+                       FontSize="Large" />
+            </Frame>
+
+            <Label x:Name="label"
+                   Text="{Binding NumberOfTapsTapped}"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

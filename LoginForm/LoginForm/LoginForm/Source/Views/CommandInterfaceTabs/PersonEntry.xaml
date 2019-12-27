@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.CommandInterfaceTabs.ViewModel"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CommandInterfaceTabs.PersonEntry"
+             Title="Person Entry"
+             Padding="20">
+
+    <ContentPage.Content>
+        <Grid RowSpacing="20"
+              Padding="10">
+
+            <!--Binding Context Declaration-->
+            <Grid.BindingContext>
+                <local:PersonCollectionViewModel />
+            </Grid.BindingContext>
+
+            <!--Define the number of row-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--First row - New Button-->
+            <StackLayout Grid.Row="0"
+                         Spacing="20">
+                <Label Text="Person Entry - Normal Command"
+                       FontSize="Large" />
+
+                <Button Text="New"
+                        Command="{Binding NewCommand}"
+                        HorizontalOptions="Start" />
+            </StackLayout>
+
+            <!--Second row - Entry form-->
+            <Grid IsEnabled="{Binding IsUpdating}"
+                  Grid.Row="1">
+
+                <Grid BindingContext="{Binding PersonUpdate}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--First row - Enter name-->
+                    <Label Text="Name: "
+                           VerticalOptions="Center"
+                           Grid.Row="0"
+                           Grid.Column="0" />
+                    <Entry Text="{Binding Name}"
+                           VerticalOptions="Center"
+                           Grid.Row="0"
+                           Grid.Column="1" />
+
+                    <!--Second row - Enter age-->
+                    <Label Text="Age: "
+                           Grid.Row="1"
+                           Grid.Column="0"
+                           VerticalOptions="Center" />
+                    <StackLayout Orientation="Horizontal"
+                                 VerticalOptions="Center"
+                                 Grid.Row="1"
+                                 Grid.Column="1">
+                        <Stepper Value="{Binding Age}"
+                                 Maximum="100" />
+                        <Label Text="{Binding Age, StringFormat='{0} years old'}"
+                               VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <!--Third row - Enter skills-->
+                    <Label Text="Skills: "
+                           VerticalOptions="Center"
+                           Grid.Row="2"
+                           Grid.Column="0" />
+                    <Entry Text="{Binding Skills}"
+                           VerticalOptions="Center"
+                           Grid.Row="2"
+                           Grid.Column="1" />
+                </Grid>
+            </Grid>
+
+            <!--Third row - Submit and Cancel Buttons-->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Submit"
+                        Command="{Binding SubmitCommand}"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.Column="0" />
+
+                <Button Text="Cancel"
+                        Command="{Binding CancelCommand}"
+                        VerticalOptions="CenterAndExpand"
+                        Grid.Column="1" />
+            </Grid>
+
+            <!--Fourth row - List of Persons-->
+            <ListView Grid.Row="3"
+                      ItemsSource="{Binding Persons}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

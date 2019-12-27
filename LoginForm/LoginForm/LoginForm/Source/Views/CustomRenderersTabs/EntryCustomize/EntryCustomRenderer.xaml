@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:LoginForm.Source.Views.CustomRenderersTabs.EntryCustomize"
+             mc:Ignorable="d"
+             x:Class="LoginForm.Source.Views.CustomRenderersTabs.EntryCustomize.EntryCustomRenderer"
+             Title="Entry"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Entry Custom Renderer"
+                   FontSize="Large" />
+            <local:MyEntry Placeholder="Enter something here ..." />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
