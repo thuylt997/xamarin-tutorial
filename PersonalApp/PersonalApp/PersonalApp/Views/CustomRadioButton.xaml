@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PersonalApp.Views"
+             mc:Ignorable="d"
+             x:Class="PersonalApp.Views.CustomRadioButton">
+
+    <ContentView.Content>
+        <StackLayout x:Name="mainContainer"
+                     Orientation="Horizontal"
+                     HorizontalOptions="FillAndExpand"
+                     VerticalOptions="FillAndExpand"
+                     Padding="0"
+                     Spacing="5">
+
+            <StackLayout.BindingContext>
+                <local:CustomRadioButton />
+            </StackLayout.BindingContext>
+
+            <Label Text="Radio Button Example"
+                   FontSize="Large"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" />
+
+            <AbsoluteLayout x:Name="imageContainer"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            WidthRequest="20"
+                            HeightRequest="20">
+
+                <!--<Image x:Name="checkBackground"
+                       Source="{Binding CheckedBackgroundImageSource}"
+                       Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       Opacity="0"
+                       InputTransparent="True" />
+
+                <Image x:Name="borderImage"
+                       Source="{Binding BorderImageSource}"
+                       Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       InputTransparent="True" />
+
+                <Image x:Name="checkedImage"
+                       Source="{Binding CheckMarkImageSource}"
+                       Aspect="AspectFill"
+                       AbsoluteLayout.LayoutBounds="0.5, 0.5, 1, 1"
+                       AbsoluteLayout.LayoutFlags="All"
+                       Opacity="0"
+                       InputTransparent="True" />-->
+            </AbsoluteLayout>
+
+            <Label x:Name="controlLabel"
+                   Text="{Binding Title}"
+                   Style="{Binding LabelStyle}"
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   InputTransparent="True" />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

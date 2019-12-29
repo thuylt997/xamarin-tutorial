@@ -22,7 +22,7 @@ namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
                 return;
             }
 
-            selectedLabel.Text = radioButton.Text;
+            //selectedLabel.Text = radioButton.Text;
         }
     }
 }

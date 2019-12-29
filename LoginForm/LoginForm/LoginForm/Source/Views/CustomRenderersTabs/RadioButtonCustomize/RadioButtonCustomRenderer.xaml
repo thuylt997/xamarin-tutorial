@@ -15,12 +15,9 @@
             <StackLayout.BindingContext>
                 <local1:RadioGroupDemoViewModel />
             </StackLayout.BindingContext>
+            
             <Label Text="Radio Button Custom Renderer"
                    FontSize="Large" />
-
-            <!--<local:BindableRadioGroup x:Name="MyRadioButtonGroup"
-                                      ItemsSource="{Binding ItemsSource}"
-                                      SelectedIndex="{Binding SelectedIndex}" />-->
 
             <Label Text="Radio Button without Effect"
                    FontSize="Small" />

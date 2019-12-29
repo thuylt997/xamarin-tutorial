@@ -1,6 +1,5 @@
-﻿using System;
+﻿using PersonalApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PersonalApp
 {
