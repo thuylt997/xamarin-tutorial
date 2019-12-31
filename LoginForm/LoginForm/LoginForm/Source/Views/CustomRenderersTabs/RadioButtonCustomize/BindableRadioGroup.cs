@@ -13,7 +13,8 @@ namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
         public ObservableCollection<CustomRadioButton> Items;
 
         //Initializes a new instance of the<see cref="BindableRadioGroup"/> class.
-        public BindableRadioGroup() => Items = new ObservableCollection<CustomRadioButton>();
+        public BindableRadioGroup() =>
+            Items = new ObservableCollection<CustomRadioButton>();
 
         [Obsolete]
         public static BindableProperty ItemsSourceProperty =
@@ -32,6 +33,7 @@ namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
                 propertyChanged: OnSelectedIndexChanged
             );
 
+        // Creating Accessors
         [Obsolete]
         public IEnumerable ItemsSource
         {

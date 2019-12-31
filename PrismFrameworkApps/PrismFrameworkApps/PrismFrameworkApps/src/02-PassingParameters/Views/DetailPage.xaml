@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._02_PassingParameters.Views.DetailPage"
+             Title="Detail Page"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="{Binding DetailPageTitle}"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <StackLayout Spacing="20"
+                         Margin="20, 0, 20, 0">
+
+                <Label Text="{Binding DetailPageTitle}" />
+
+                <Button Text="Back to Main Page"
+                        Command="{Binding NavigateCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

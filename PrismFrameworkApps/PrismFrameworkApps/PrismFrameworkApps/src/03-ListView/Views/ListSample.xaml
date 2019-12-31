@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._03_ListView.Views.ListSample"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="Prism ListView Sample">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="0, 20, 0, 0"
+                    Android="20" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Prism ListView Sample Testing"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <ListView ItemsSource="{Binding Items}"
+                      BackgroundColor="LightBlue"
+                      SeparatorColor="Gray" />
+
+            <Button Text="Back to Menu"
+                    Command="{prism:NavigateTo '/HomePageView'}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

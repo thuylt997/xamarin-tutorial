@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using Android.Widget;
 using LoginForm.Droid;
 using LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize;
@@ -9,50 +8,35 @@ using Xamarin.Forms.Platform.Android;
 [assembly: ExportRenderer(typeof(CustomRadioButton), typeof(RadioButtonRenderer))]
 namespace LoginForm.Droid
 {
-    [Obsolete]
+#pragma warning disable CS0618 // 'ViewRenderer<CustomRadioButton, RadioButton>.ViewRenderer()" является устаревшим: 'This constructor is obsolete as of version 2.5. Please use ViewRenderer(Context) instead.'
     public class RadioButtonRenderer : ViewRenderer<CustomRadioButton, RadioButton>
     {
-        //private ColorStateList defaultTextColor;
-
         protected override void OnElementChanged(ElementChangedEventArgs<CustomRadioButton> e)
         {
             base.OnElementChanged(e);
 
-            //if (e.OldElement != null)
-            //{
-            //    e.OldElement.PropertyChanged += OnElementPropertyChanged;
-            //}
+            if (e.OldElement != null)
+            {
+                e.OldElement.PropertyChanged += ElementOnPropertyChanged;
+            }
 
             if (Control == null)
             {
                 var radioButton = new RadioButton(Context);
 
-                //defaultTextColor = radioButton.TextColors;
+                //radioButton.CheckedChange += RadioButtonCheckedChange;
 
-                radioButton.CheckedChange += RadioButtonCheckedChange;
                 SetNativeControl(radioButton);
             }
 
             Control.Text = e.NewElement.Text;
             Control.Checked = e.NewElement.Checked;
-            //Element.PropertyChanged += OnElementPropertyChanged;
-            //UpdateTextColor();
 
-            //if (e.NewElement.FontSize > 0)
-            //{
-            //    Control.TextSize = (float)e.NewElement.FontSize;
-            //}
-
-            //if (!string.IsNullOrEmpty(e.NewElement.FontName))
-            //{
-            //    Control.Typeface = TrySetFont(e.NewElement.FontName);
-            //}
+            Element.PropertyChanged += ElementOnPropertyChanged;
         }
 
-        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        void ElementOnPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.OnElementPropertyChanged(sender, e);
-
             switch (e.PropertyName)
             {
                 case "Checked":
@@ -63,69 +47,13 @@ namespace LoginForm.Droid
                     Control.Text = Element.Text;
                     break;
 
-                //case "TextColor":
-                //    break;
-
-                //case "FontName":
-                //    break;
-
-                //case "FontSize":
-                //    break;
-
                 default:
                     break;
             }
         }
 
-        //private Typeface TrySetFont(string fontName)
-        //{
-        //    var typeface = Typeface.Default;
-
-        //    try
-        //    {
-        //        typeface = Typeface.CreateFromAsset(Context.Assets, fontName);
-
-        //        return typeface;
-        //    }
-        //    catch (Exception error)
-        //    {
-        //        Console.Write("Not found in assets {0}", error);
-
-        //        try
-        //        {
-        //            typeface = Typeface.CreateFromFile(fontName);
-
-        //            return typeface;
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            Console.Write(ex);
-
-        //            return Typeface.Default;
-        //        }
-        //    }
-        //}
-
-        //void UpdateTextColor()
-        //{
-        //    if (Control == null || Element == null)
-        //    {
-        //        return;
-        //    }
-
-        //    if (Element.TextColor == Color.Default)
-        //    {
-        //        Control.SetTextColor(defaultTextColor);
-        //    }
-        //    else
-        //    {
-        //        Control.SetTextColor(Element.TextColor.ToAndroid());
-        //    }
-        //}
-
-        void RadioButtonCheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e)
-        {
+        void RadioButtonCheckedChange(object sender, CompoundButton.CheckedChangeEventArgs e) =>
             Element.Checked = e.IsChecked;
-        }
     }
+#pragma warning restore CS0618 // 'ViewRenderer<CustomRadioButton, RadioButton>.ViewRenderer()" является устаревшим: 'This constructor is obsolete as of version 2.5. Please use ViewRenderer(Context) instead.'
 }

@@ -4,19 +4,17 @@ using Xamarin.Forms;
 
 namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
 {
+#pragma warning disable CS0618 // 'ViewRenderer<CustomRadioButton, RadioButton>.ViewRenderer()" является устаревшим: 'This constructor is obsolete as of version 2.5. Please use ViewRenderer(Context) instead.'
     public class CustomRadioButton : View
     {
-        [Obsolete]
         public static readonly BindableProperty CheckedProperty =
             BindableProperty.Create<CustomRadioButton, bool>(p => p.Checked, false);
 
-        [Obsolete]
         public static readonly BindableProperty TextProperty =
             BindableProperty.Create<CustomRadioButton, string>(p => p.Text, string.Empty);
 
         public EventHandler<EventArgs<bool>> CheckedChanged;
 
-        [Obsolete]
         public bool Checked
         {
             get => (bool)GetValue(CheckedProperty);
@@ -24,16 +22,15 @@ namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
             {
                 SetValue(CheckedProperty, value);
 
-                var eventHandler = CheckedChanged;
+                //var eventHandler = CheckedChanged;
 
-                if (eventHandler != null)
-                {
-                    eventHandler.Invoke(this, value);
-                }
+                //if (eventHandler != null)
+                //{
+                //    eventHandler.Invoke(this, value);
+                //}
             }
         }
 
-        [Obsolete]
         public string Text
         {
             get => (string)GetValue(TextProperty);
@@ -42,4 +39,5 @@ namespace LoginForm.Source.Views.CustomRenderersTabs.RadioButtonCustomize
 
         public int Id { get; set; }
     }
+#pragma warning disable CS0618 // 'ViewRenderer<CustomRadioButton, RadioButton>.ViewRenderer()" является устаревшим: 'This constructor is obsolete as of version 2.5. Please use ViewRenderer(Context) instead.'
 }
