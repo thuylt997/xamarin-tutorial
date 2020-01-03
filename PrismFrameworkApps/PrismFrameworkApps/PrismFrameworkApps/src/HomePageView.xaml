@@ -37,6 +37,27 @@
                                   Command="{Binding NavigateCommand}"
                                   CommandParameter="/ListSample" />
 
+                        <TextCell Text="04. Services Registration"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="/ServicesMain" />
+
+                        <TextCell Text="05. Platform Specific Services"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="/PSSMain" />
+
+                        <TextCell Text="06. XAML Navigation"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="/XamlNavMain" />
+
+                        <TextCell Text="07. MasterDetailPages"
+                                  Command="{Binding NavigateToMasterDetailPage}" />
+
+                        <TextCell Text="08. NavigationPages"
+                                  Command="{Binding NavigateToNavigationPage}" />
+
+                        <TextCell Text="09. TabbedPages"
+                                  Command="{Binding NavigateToTabbedPage}" />
+
                         <TextCell Text="12. ViewModelLocator"
                                   Command="{Binding NavigateCommand}"
                                   CommandParameter="/VMLMainPage" />

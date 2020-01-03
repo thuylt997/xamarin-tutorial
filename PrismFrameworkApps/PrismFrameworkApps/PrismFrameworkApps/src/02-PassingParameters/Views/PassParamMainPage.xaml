@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._02_PassingParameters.Views.PassParamMainPage"
              Title="Passing Parameter"
@@ -16,9 +17,15 @@
                    TextColor="Black"
                    Margin="0, 0, 0, 20" />
 
-            <Button Text="Navigate to Detail Page"
-                    Margin="20, 0, 20, 0"
-                    Command="{Binding NavigateCommand}" />
+            <StackLayout Spacing="20"
+                         Margin="20, 0, 20, 0">
+
+                <Button Text="Navigate to Detail Page"
+                        Command="{Binding NavigateCommand}" />
+
+                <Button Text="Back to Menu"
+                        Command="{prism:NavigateTo '/HomePageView'}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

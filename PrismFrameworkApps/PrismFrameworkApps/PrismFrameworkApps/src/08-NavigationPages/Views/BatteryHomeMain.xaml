@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._08_NavigationPages.Views.BatteryHomeMain"
+             Title="Home"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Battery Checking Home Page"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <StackLayout Spacing="20"
+                         Margin="20, 0, 20, 0">
+
+                <Label Text="{Binding Username, StringFormat='Welcome {0}'}" />
+
+                <Button Text="Get Battery Status"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Command="{Binding GetBatteryStatusCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

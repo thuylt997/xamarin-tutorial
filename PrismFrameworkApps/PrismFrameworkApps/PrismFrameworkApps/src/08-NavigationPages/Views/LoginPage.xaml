@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._08_NavigationPages.Views.LoginPage"
+             NavigationPage.HasBackButton="True"
+             Title="Login Page"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Login Page"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <StackLayout Spacing="20"
+                         Margin="20, 0, 20, 0">
+
+                <Entry Text="{Binding Username}"
+                       Placeholder="Username" />
+
+                <Entry IsPassword="True"
+                       Placeholder="Password">
+
+                    <Entry.Behaviors>
+                        <b:EventToCommandBehavior EventName="Completed"
+                                                  Command="{Binding LoginCommand}" />
+                    </Entry.Behaviors>
+                </Entry>
+
+                <Button Text="Login"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="20"
+                        Command="{Binding LoginCommand}" />
+            </StackLayout>
+
+            <Button Text="Back to Menu"
+                    TextColor="White"
+                    BackgroundColor="Black"
+                    CornerRadius="20"
+                    Margin="20, 0, 20, 0"
+                    VerticalOptions="EndAndExpand"
+                    Command="{Binding BackToMenuCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

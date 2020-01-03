@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                  mc:Ignorable="d"
+                  x:Class="PrismFrameworkApps.src._07_MasterDetailPages.Views.CustomMasterDetailPage">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Padding="20"
+                         BackgroundColor="LightGray"
+                         Spacing="20">
+
+                <Button Text="Home Page"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="20"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="/NavigationPage/MasterHomePage" />
+
+                <Button Text="Go to Test 1"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="20"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="/NavigationPage/Test1Page" />
+
+                <Button Text="Go to Test 2"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="20"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="/NavigationPage/Test2Page" />
+
+                <Button Text="Back to Menu"
+                        TextColor="White"
+                        BackgroundColor="Black"
+                        CornerRadius="20"
+                        Command="{Binding BackToMenuCommand}" />
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>

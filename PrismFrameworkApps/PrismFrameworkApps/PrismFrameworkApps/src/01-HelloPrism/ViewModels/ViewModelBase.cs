@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 
 namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
@@ -16,6 +17,12 @@ namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
         public DelegateCommand BackToMenuCommand { get; }
 
         public DelegateCommand<string> NavigateCommand { get; }
+
+        public DelegateCommand NavigateToMasterDetailPage { get; }
+
+        public DelegateCommand NavigateToTabbedPage { get; }
+
+        public DelegateCommand NavigateToNavigationPage { get; }
 
         private IEnumerable<string> messages;
 
@@ -70,6 +77,46 @@ namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
             GoHomeCommand = new DelegateCommand(OnGoHomeCommandExecuted);
             BackToMenuCommand = new DelegateCommand(OnBackToMenuCommandExecuted);
             NavigateCommand = new DelegateCommand<string>(OnNavigateCommandExecuted);
+            NavigateToMasterDetailPage = new DelegateCommand(OnNavigateToMasterDetailPageExecuted);
+            NavigateToTabbedPage = new DelegateCommand(OnNavigateToTabbedPageExecuted);
+            NavigateToNavigationPage = new DelegateCommand(OnNavigateToNavigationPageExecuted);
+        }
+
+        async void OnNavigateToNavigationPageExecuted()
+        {
+            var result = await _navigationService.NavigateAsync(
+                //new Uri("http://www.MyPrismFrameworkApps.com/CustomNavigationPage/LoginPage", UriKind.Absolute)
+                new Uri("/CustomNavigationPage/LoginPage", UriKind.Absolute)
+            );
+
+            if (!result.Success)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+        }
+
+        async void OnNavigateToTabbedPageExecuted()
+        {
+            var result = await _navigationService.NavigateAsync(
+                new Uri("/NavigationPage/CustomTabbedPage?selectedTab=MasterHomePage", UriKind.Absolute)
+            );
+
+            if (!result.Success)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
+        }
+
+        async void OnNavigateToMasterDetailPageExecuted()
+        {
+            var result = await _navigationService.NavigateAsync(
+                new Uri("/CustomMasterDetailPage/NavigationPage/MasterHomePage", UriKind.Absolute)
+            );
+
+            if (!result.Success)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
         }
 
         async void OnNavigateCommandExecuted(string path)

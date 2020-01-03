@@ -7,5 +7,7 @@ namespace PrismFrameworkApps.src._03_ListView.Views
     public partial class ListSample : ContentPage
     {
         public ListSample() => InitializeComponent();
+
+        //void OnListViewItemTapped(object sender, ItemTappedEventArgs e) => entry.Text = e.Item.ToString();
     }
 }

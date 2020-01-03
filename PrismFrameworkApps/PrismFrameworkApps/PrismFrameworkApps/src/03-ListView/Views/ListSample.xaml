@@ -4,10 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:local="clr-namespace:PrismFrameworkApps.src._03_ListView.Behaviors"
+             xmlns:conv="clr-namespace:PrismFrameworkApps.src._03_ListView.Converters"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._03_ListView.Views.ListSample"
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Prism ListView Sample">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
@@ -23,11 +31,35 @@
                    TextColor="Black"
                    Margin="0, 0, 0, 20" />
 
-            <ListView ItemsSource="{Binding Items}"
+            <Entry x:Name="entry"
+                   Text="{Binding SelectedItem}"
+                   Placeholder="Please choose your favorite place ..." />
+
+            <!--<ListView ItemsSource="{Binding Items}"
+                      ItemTapped="OnListViewItemTapped"
                       BackgroundColor="LightBlue"
-                      SeparatorColor="Gray" />
+                      SeparatorColor="Gray" />-->
+
+            <ListView ItemsSource="{Binding CityItems}"
+                      Margin="10, 0, 10, 0"
+                      BackgroundColor="NavajoWhite">
+
+                <ListView.Behaviors>
+                    <local:ItemSelectedToCommandBehavior Command="{Binding ItemSelectedCommand}" />
+                </ListView.Behaviors>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding CityName}"
+                                   VerticalOptions="Center" />
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <Button Text="Back to Menu"
+                    Margin="20, 0, 20, 0"
                     Command="{prism:NavigateTo '/HomePageView'}" />
         </StackLayout>
     </ContentPage.Content>

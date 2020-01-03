@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._04_ServicesRegistration.Views.TransientService"
+             Title="Transient Service Page"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Transient Service Page"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <Label Text="This page is using Transient Service, returned number value from service is: " />
+
+            <Label Text="{Binding NumberValue}"
+                   FontSize="Small" />
+
+            <Button Text="Go back"
+                    Margin="20, 0, 20, 0"
+                    Command="{Binding GoBackCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

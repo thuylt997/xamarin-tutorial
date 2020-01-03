@@ -13,6 +13,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Main Page"
+                    Margin="20, 0, 20, 0"
                     Command="{prism:GoBack}" />
         </StackLayout>
     </ContentPage.Content>

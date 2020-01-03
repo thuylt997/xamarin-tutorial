@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:PrismFrameworkApps.src._07_MasterDetailPages.Views"
+            mc:Ignorable="d"
+            x:Class="PrismFrameworkApps.src._09_TabbedPages.Views.CustomTabbedPage"
+            Title="TabbedPage Example">
+
+    <TabbedPage.Children>
+        <local:MasterHomePage />
+        <local:Test1Page />
+        <local:Test2Page />
+    </TabbedPage.Children>
+</TabbedPage>

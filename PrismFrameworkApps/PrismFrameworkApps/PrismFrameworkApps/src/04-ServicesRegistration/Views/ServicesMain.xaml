@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._04_ServicesRegistration.Views.ServicesMain"
+             Title="Services Registration Sample"
+             Padding="20">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Services Registration"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Margin="0, 0, 0, 20" />
+
+            <StackLayout Spacing="20"
+                         Margin="20, 0, 20, 0">
+
+                <Button Text="Transient Service"
+                        Command="{Binding GoToTransientServicePage}" />
+
+                <Button Text="Singleton Service"
+                        Command="{Binding GoToSingletonServicePage}" />
+
+                <Button Text="Back to Menu"
+                        Command="{Binding GoToPreviousPage}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
