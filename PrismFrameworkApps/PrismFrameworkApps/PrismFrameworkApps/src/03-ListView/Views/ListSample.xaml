@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:local="clr-namespace:PrismFrameworkApps.src._03_ListView.Behaviors"
              xmlns:conv="clr-namespace:PrismFrameworkApps.src._03_ListView.Converters"
              mc:Ignorable="d"
@@ -11,11 +12,11 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              Title="Prism ListView Sample">
 
-    <ContentPage.Resources>
+    <!--<ContentPage.Resources>
         <ResourceDictionary>
             <conv:ItemTappedEventArgsConverter x:Key="itemTappedEventArgsConverter" />
         </ResourceDictionary>
-    </ContentPage.Resources>
+    </ContentPage.Resources>-->
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness"
@@ -45,7 +46,11 @@
                       BackgroundColor="NavajoWhite">
 
                 <ListView.Behaviors>
-                    <local:ItemSelectedToCommandBehavior Command="{Binding ItemSelectedCommand}" />
+                    <!--<local:ItemSelectedToCommandBehavior Command="{Binding ItemSelectedCommand}" />-->
+
+                    <b:EventToCommandBehavior EventName="ItemTapped"
+                                              Command="{Binding GoToCityDetailPage}"
+                                              EventArgsConverter="{conv:ItemTappedEventArgsConverter}" />
                 </ListView.Behaviors>
 
                 <ListView.ItemTemplate>

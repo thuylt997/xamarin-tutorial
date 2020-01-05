@@ -35,7 +35,7 @@
 
                         <TextCell Text="03. ListView"
                                   Command="{Binding NavigateCommand}"
-                                  CommandParameter="/ListSample" />
+                                  CommandParameter="/NavigationPage/ListSample" />
 
                         <TextCell Text="04. Services Registration"
                                   Command="{Binding NavigateCommand}"

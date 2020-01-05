@@ -82,9 +82,10 @@ namespace PrismFrameworkApps
             containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
             // END - Passing Parameters Example
 
-            // START - Prism ListView Example
+            #region 03 - Prism ListView Example
             containerRegistry.RegisterForNavigation<ListSample, ListSampleViewModel>();
-            // END - Prism ListView Example
+            containerRegistry.RegisterForNavigation<CityDetailPage, CityDetailPageViewModel>();
+            #endregion 03 - Prism ListView Example
 
             #region 04 - Services Registration
             containerRegistry.RegisterForNavigation<ServicesMain, ServicesMainViewModel>();

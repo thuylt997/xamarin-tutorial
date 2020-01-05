@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace PrismFrameworkApps.src._03_ListView.Converters
 {
-    public class ItemTappedEventArgsConverter : IValueConverter
+    public class ItemTappedEventArgsConverter : IValueConverter, IMarkupExtension
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -20,5 +21,7 @@ namespace PrismFrameworkApps.src._03_ListView.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
             throw new NotImplementedException();
+
+        public object ProvideValue(IServiceProvider serviceProvider) => this;
     }
 }
