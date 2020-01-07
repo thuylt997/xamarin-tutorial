@@ -1,27 +1,41 @@
-﻿using PersonalApp.Views;
+﻿using PersonalApp.RestApiDemo.ViewModels;
+using PersonalApp.RestApiDemo.Views;
+using Prism;
+using Prism.DryIoc;
+using Prism.Ioc;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace PersonalApp
 {
-    public partial class App : Application
+    public partial class App : PrismApplication
     {
-        public App()
+        public App() : this(null)
+        {
+            //InitializeComponent();
+
+            //MainPage = new NavigationPage(new RestApiMain());
+        }
+
+        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+
+        protected override void RegisterTypes(IContainerRegistry containerRegistry)
+        {
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+
+            containerRegistry.RegisterForNavigation<RestApiMain, RestApiMainViewModel>();
+        }
+
+        protected override async void OnInitialized()
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
-        }
+            var result = await NavigationService.NavigateAsync("RestApiMain");
 
-        protected override void OnStart()
-        {
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
+            if (!result.Success)
+            {
+                Debugger.Break();
+            }
         }
     }
 }

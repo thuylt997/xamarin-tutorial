@@ -38,7 +38,7 @@
                                      Binding="{Binding IsToggled, Source={x:Reference useModal}}"
                                      Value="True">
                             <Setter Property="CommandParameter"
-                                    Value="ViewB?useModalNavigation=True" />
+                                    Value="/NavigationPage/ViewB?useModalNavigation=True" />
                         </DataTrigger>
                     </Button.Triggers>
                 </Button>

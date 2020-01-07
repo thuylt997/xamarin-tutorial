@@ -61,6 +61,6 @@ namespace PrismFrameworkApps.src._05_PlatformSpecificServices.ViewModels
         void OnSpeakCommandExecuted() => _textToSpeech.Speak(Text);
 
         async void NavigateToPreviousPageExecuted() =>
-             await _navigationService.NavigateAsync("/HomePageView");
+             await _navigationService.NavigateAsync("/NavigationPage/HomePageView");
     }
 }

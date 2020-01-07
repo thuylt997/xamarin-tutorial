@@ -10,11 +10,6 @@
              Padding="20"
              prism:ViewModelLocator.AutowireViewModel="True">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Back"
-                     Command="{Binding BackToMenuCommand}" />
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding CityNameTitle, StringFormat='Welcome to {0}!'}"

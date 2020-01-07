@@ -20,7 +20,7 @@
 
             <Button Text="Back to Menu"
                     Margin="20, 0, 20, 20"
-                    Command="{prism:NavigateTo '/HomePageView'}"/>
+                    Command="{prism:NavigateTo '/NavigationPage/HomePageView'}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

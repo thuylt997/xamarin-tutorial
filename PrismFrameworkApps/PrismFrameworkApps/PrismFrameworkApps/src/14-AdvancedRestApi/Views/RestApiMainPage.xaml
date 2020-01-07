@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:prism="http://prismlibrary.com"
+            mc:Ignorable="d"
+            x:Class="PrismFrameworkApps.src._14_AdvancedRestApi.Views.RestApiMainPage"
+            Title="{Binding Title}"
+            Padding="20">
+
+    <TabbedPage.Children>
+        <ContentPage Title="Make Up">
+            <StackLayout Spacing="20">
+                <Button Text="Get Make Ups"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        CornerRadius="20"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding GetDataCommand}" />
+
+                <ListView x:Name="MakeUpList"
+                          ItemsSource="{Binding MakeUpsCollection}">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+
+        <ContentPage Title="Timeline">
+            <StackLayout Spacing="20">
+                <Button Text="Get Timeline"
+                        BackgroundColor="Black"
+                        TextColor="White"
+                        CornerRadius="20"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding GetTimeLineDataCommand}" />
+
+                <ListView x:Name="TimelineList"
+                          ItemsSource="{Binding NewsCollection}">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell Text="{Binding Data.Title}"
+                                       Detail="{Binding Data.Title}"
+                                       ImageSource="{Binding Data.Thumbnail}" />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ContentPage>
+    </TabbedPage.Children>
+
+</TabbedPage>

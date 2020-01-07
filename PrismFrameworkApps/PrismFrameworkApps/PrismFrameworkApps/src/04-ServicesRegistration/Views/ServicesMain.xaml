@@ -6,17 +6,11 @@
              xmlns:prism="http://prismlibrary.com"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._04_ServicesRegistration.Views.ServicesMain"
-             Title="Services Registration Sample"
+             Title="Services Registration"
              Padding="20">
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="Services Registration"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
 
@@ -25,9 +19,6 @@
 
                 <Button Text="Singleton Service"
                         Command="{Binding GoToSingletonServicePage}" />
-
-                <Button Text="Back to Menu"
-                        Command="{Binding GoToPreviousPage}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

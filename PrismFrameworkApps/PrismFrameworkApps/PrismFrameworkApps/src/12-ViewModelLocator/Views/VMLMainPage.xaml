@@ -6,22 +6,16 @@
              xmlns:prism="http://prismlibrary.com"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._12_ViewModelLocator.Views.VMLMainPage"
-             Title="ViewModelLocator"
+             Title="View Model Locator"
              Padding="20">
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="ViewModelLocator Example"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
 
                 <Button Text="Back to Menu"
-                        Command="{prism:NavigateTo '/HomePageView'}" />
+                        Command="{prism:NavigateTo '/NavigationPage/HomePageView'}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -27,9 +27,6 @@
                 <Button Text="Deep link to View C"
                         Command="{Binding NavigateCommand}"
                         CommandParameter="/NavigationPage/ViewA/ViewB/ViewC" />
-
-                <Button Text="Back to Menu"
-                        Command="{Binding BackToMenuCommand}" />
             </StackLayout>
 
         </StackLayout>

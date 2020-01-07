@@ -10,12 +10,6 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="Transient Service Page"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <Label Text="This page is using Transient Service, returned number value from service is: " />
 
             <Label Text="{Binding NumberValue}"

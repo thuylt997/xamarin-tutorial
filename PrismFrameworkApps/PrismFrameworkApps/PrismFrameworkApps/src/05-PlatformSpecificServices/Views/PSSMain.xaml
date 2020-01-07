@@ -5,16 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._05_PlatformSpecificServices.Views.PSSMain"
-             Title="Platform Specific Services Example"
+             Title="Platform Specific Services"
              Padding="20">
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="Platform Specific Services"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
 
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
@@ -23,9 +18,6 @@
 
                 <Button Text="Speak"
                         Command="{Binding SpeakCommand}" />
-
-                <Button Text="Back to Menu"
-                        Command="{Binding BackToPreviousPage}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

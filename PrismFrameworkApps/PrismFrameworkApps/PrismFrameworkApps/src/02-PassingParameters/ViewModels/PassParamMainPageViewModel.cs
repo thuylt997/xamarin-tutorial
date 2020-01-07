@@ -20,7 +20,7 @@ namespace PrismFrameworkApps.src._02_PassingParameters.ViewModels
 
         public PassParamMainPageViewModel(INavigationService navigationService)
         {
-            MainPageTitle = "Passing Parameters Main Page";
+            MainPageTitle = "Passing Parameters";
 
             _navigationService = navigationService;
         }

@@ -76,7 +76,7 @@ namespace PrismFrameworkApps.src._03_ListView.ViewModels
 
             parameters.Add("citynamekey", city.CityName);
 
-            await _navigationService.NavigateAsync("/NavigationPage/CityDetailPage", parameters);
+            await _navigationService.NavigateAsync("CityDetailPage", parameters);
         }
 
         public void OnNavigatedFrom(INavigationParameters parameters)

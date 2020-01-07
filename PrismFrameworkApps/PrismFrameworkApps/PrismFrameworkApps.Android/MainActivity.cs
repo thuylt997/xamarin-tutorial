@@ -9,6 +9,7 @@ using Plugin.CurrentActivity;
 using PrismFrameworkApps.src._05_PlatformSpecificServices.Services;
 using PrismFrameworkApps.Droid.Services;
 using PrismFrameworkApps.src._08_NavigationPages.Services;
+using Acr.UserDialogs;
 
 namespace PrismFrameworkApps.Droid
 {
@@ -34,6 +35,7 @@ namespace PrismFrameworkApps.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            UserDialogs.Init(this);
             LoadApplication(new App(new AndroidInitializer()));
 
             #region Hide status bar

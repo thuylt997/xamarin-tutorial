@@ -25,12 +25,15 @@ using PrismFrameworkApps.src._08_NavigationPages.Views;
 using PrismFrameworkApps.src._09_TabbedPages.Views;
 using PrismFrameworkApps.src._12_ViewModelLocator.ViewModels;
 using PrismFrameworkApps.src._12_ViewModelLocator.Views;
-using PrismFrameworkApps.src._16_PageLifecycle.ViewModels;
-using PrismFrameworkApps.src._16_PageLifecycle.Views;
-using PrismFrameworkApps.src._19_NavigationMode.ViewModels;
-using PrismFrameworkApps.src._19_NavigationMode.Views;
-using System;
+using PrismFrameworkApps.src._10_PageLifecycle.ViewModels;
+using PrismFrameworkApps.src._10_PageLifecycle.Views;
+using PrismFrameworkApps.src._11_NavigationMode.ViewModels;
+using PrismFrameworkApps.src._11_NavigationMode.Views;
 using Xamarin.Forms;
+using PrismFrameworkApps.src._13_RefitRestApi.Views;
+using PrismFrameworkApps.src._13_RefitRestApi.ViewModels;
+using PrismFrameworkApps.src._14_AdvancedRestApi.Views;
+using PrismFrameworkApps.src._14_AdvancedRestApi.ViewModels;
 
 namespace PrismFrameworkApps
 {
@@ -44,7 +47,7 @@ namespace PrismFrameworkApps
         {
             InitializeComponent();
 
-            var result = await NavigationService.NavigateAsync("HomePageView");
+            var result = await NavigationService.NavigateAsync("/NavigationPage/HomePageView");
 
             //var result = await NavigationService.NavigateAsync(
             //    new Uri("/CustomMasterDetailPage/NavigationPage/Test2Page", UriKind.Absolute)
@@ -58,29 +61,29 @@ namespace PrismFrameworkApps
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            // START - NavigationPage
+            #region NavigationPage
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            // END - NavigationPage
+            #endregion NavigationPage
 
-            // START - Home Page (Menu)
+            #region Home Page (Menu)
             containerRegistry.RegisterForNavigation<HomePageView, HomePageViewModel>();
-            // END - Home Page (Menu)
+            #endregion Home Page (Menu)
 
-            // START - Application Lifecycle Example
+            #region 00 - Application Lifecycle Example
             containerRegistry.RegisterForNavigation<AppLifecycleMainPage, AppLifecycleMainPageViewModel>();
-            // END - Application Lifecycle Example
+            #endregion 00 - Application Lifecycle Example
 
-            // START - Hello Prism Example
+            #region 01 - Hello Prism Example
             containerRegistry.RegisterForNavigation<HelloPrismMainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<ViewA, ViewAViewModel>();
             containerRegistry.RegisterForNavigation<ViewB, ViewBViewModel>();
             containerRegistry.RegisterForNavigation<ViewC, ViewCViewModel>();
-            // END - Hello Prism Example
+            #endregion 01 - Hello Prism Example
 
-            // START - Passing Parameters Example
+            #region 02 - Passing Parameters Example
             containerRegistry.RegisterForNavigation<PassParamMainPage, PassParamMainPageViewModel>();
             containerRegistry.RegisterForNavigation<DetailPage, DetailPageViewModel>();
-            // END - Passing Parameters Example
+            #endregion 02 - Passing Parameters Example
 
             #region 03 - Prism ListView Example
             containerRegistry.RegisterForNavigation<ListSample, ListSampleViewModel>();
@@ -125,20 +128,28 @@ namespace PrismFrameworkApps
             containerRegistry.RegisterForNavigation<CustomTabbedPage>();
             #endregion 09 - TabbedPages
 
+            #region 10 - Page Lifecycle Example
+            containerRegistry.RegisterForNavigation<PageLifecycleMainPage, PageLifecycleMainPageViewModel>();
+            containerRegistry.RegisterForNavigation<PageLifecycleViewA, PageLifecycleViewAViewModel>();
+            #endregion 10 - Page Lifecycle Example
+
+            #region 11 - Navigation Mode Example
+            containerRegistry.RegisterForNavigation<NavModeMainPage, NavModeMainPageViewModel>();
+            containerRegistry.RegisterForNavigation<SecondPage, SecondPageViewModel>();
+            containerRegistry.RegisterForNavigation<ThirdPage, ThirdPageViewModel>();
+            #endregion 11 - Navigation Mode Example
+
             #region 12 - ViewModelLocator
             containerRegistry.RegisterForNavigation<VMLMainPage, VMLMainPageViewModel>();
             #endregion 12 - ViewModelLocator
 
-            // START - Page Lifecycle Example
-            containerRegistry.RegisterForNavigation<PageLifecycleMainPage, PageLifecycleMainPageViewModel>();
-            containerRegistry.RegisterForNavigation<PageLifecycleViewA, PageLifecycleViewAViewModel>();
-            // END - Page Lifecycle Example
+            #region 13 - Simple Refit REST APIs Example
+            containerRegistry.RegisterForNavigation<SimpleRestApi>();
+            #endregion 13 - Simple Refit REST APIs Example
 
-            // START - Navigation Mode Example
-            containerRegistry.RegisterForNavigation<NavModeMainPage, NavModeMainPageViewModel>();
-            containerRegistry.RegisterForNavigation<SecondPage, SecondPageViewModel>();
-            containerRegistry.RegisterForNavigation<ThirdPage, ThirdPageViewModel>();
-            // END - Navigation Mode Example
+            #region 14 - Advanced Refit REST APIs Example
+            containerRegistry.RegisterForNavigation<RestApiMainPage, RestApiMainPageViewModel>();
+            #endregion 14 - Advanced Refit REST APIs Example
         }
 
         protected override void OnStart()

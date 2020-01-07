@@ -20,7 +20,7 @@ namespace PrismFrameworkApps.src._07_MasterDetailPages.ViewModels
         }
 
         async void BackToMenuCommandExecuted() =>
-            await _navigationService.NavigateAsync("/HomePageView");
+            await _navigationService.NavigateAsync("/NavigationPage/HomePageView");
 
         async void NavigateCommandExecuted(string page) =>
             await _navigationService.NavigateAsync(new Uri(page, UriKind.Relative));

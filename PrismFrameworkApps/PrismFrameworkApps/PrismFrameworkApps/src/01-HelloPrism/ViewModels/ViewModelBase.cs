@@ -144,7 +144,7 @@ namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
 
         async void OnGoHomeCommandExecuted()
         {
-            var result = await _navigationService.NavigateAsync("/HelloPrismMainPage");
+            var result = await _navigationService.NavigateAsync("/NavigationPage/HelloPrismMainPage");
 
             if (!result.Success)
             {

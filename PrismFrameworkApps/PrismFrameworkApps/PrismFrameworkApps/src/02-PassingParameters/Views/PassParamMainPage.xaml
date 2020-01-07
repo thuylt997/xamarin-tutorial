@@ -6,25 +6,16 @@
              xmlns:prism="http://prismlibrary.com"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._02_PassingParameters.Views.PassParamMainPage"
-             Title="Passing Parameter"
+             Title="{Binding MainPageTitle}"
              Padding="20">
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="{Binding MainPageTitle}"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
 
                 <Button Text="Navigate to Detail Page"
                         Command="{Binding NavigateCommand}" />
-
-                <Button Text="Back to Menu"
-                        Command="{prism:NavigateTo '/HomePageView'}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

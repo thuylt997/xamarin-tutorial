@@ -26,12 +26,6 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="Prism ListView Sample Testing"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <Entry x:Name="entry"
                    Text="{Binding SelectedItem}"
                    Placeholder="Please choose your favorite place ..." />
@@ -62,10 +56,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-            <Button Text="Back to Menu"
-                    Margin="20, 0, 20, 0"
-                    Command="{prism:NavigateTo '/HomePageView'}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

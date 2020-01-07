@@ -30,7 +30,9 @@ namespace PrismFrameworkApps.src._08_NavigationPages.ViewModels
             _pageDialogService = pageDialogService;
 
             LoginCommand = new DelegateCommand(async () => await GoHomeExecuted());
-            BackToMenuCommand = new DelegateCommand(async () => await _navigationService.NavigateAsync("/HomePageView"));
+            BackToMenuCommand = new DelegateCommand(
+                async () => await _navigationService.NavigateAsync("/NavigationPage/HomePageView")
+            );
         }
 
         async Task GoHomeExecuted()

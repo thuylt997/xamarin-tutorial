@@ -26,6 +26,6 @@ namespace PrismFrameworkApps.src._08_NavigationPages.Views
         }
 
         void UpdateColor(bool isShowingTheLoging) =>
-            BarBackgroundColor = (isShowingTheLoging) ? Color.Black : Color.Red;
+            BarBackgroundColor = (isShowingTheLoging) ? Color.Gray : Color.Red;
     }
 }

@@ -6,18 +6,16 @@
              xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              mc:Ignorable="d"
              x:Class="PrismFrameworkApps.src._08_NavigationPages.Views.LoginPage"
-             NavigationPage.HasBackButton="True"
              Title="Login Page"
              Padding="20">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Back"
+                     Command="{Binding BackToMenuCommand}"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="Login Page"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
 
@@ -39,14 +37,6 @@
                         CornerRadius="20"
                         Command="{Binding LoginCommand}" />
             </StackLayout>
-
-            <Button Text="Back to Menu"
-                    TextColor="White"
-                    BackgroundColor="Black"
-                    CornerRadius="20"
-                    Margin="20, 0, 20, 0"
-                    VerticalOptions="EndAndExpand"
-                    Command="{Binding BackToMenuCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -11,12 +11,6 @@
 
     <ContentPage.Content>
         <StackLayout Spacing="20">
-            <Label Text="XAML Navigation"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
                 
@@ -53,9 +47,6 @@
                         Command="{prism:NavigateTo InfoPage}"
                         CommandParameter="{prism:Parameter Key='Message', 
                                                            Value='Hello from XamlExtension'}" />
-
-                <Button Text="Back to Menu"
-                        Command="{prism:NavigateTo '/HomePageView'}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

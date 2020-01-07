@@ -12,12 +12,6 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Information"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   TextColor="Black"
-                   Margin="0, 0, 0, 20" />
-
             <StackLayout Spacing="20"
                          Margin="20, 0, 20, 0">
                 <Button Text="Go back to the past"
