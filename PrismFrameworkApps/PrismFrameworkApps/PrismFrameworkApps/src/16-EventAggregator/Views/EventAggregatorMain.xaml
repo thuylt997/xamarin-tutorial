@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com"
+             mc:Ignorable="d"
+             x:Class="PrismFrameworkApps.src._16_EventAggregator.Views.EventAggregatorMain"
+             Title="Event Aggregator Example"
+             prism:ViewModelLocator.AutowireViewModel="True">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="stacklayoutStyles"
+                   TargetType="StackLayout">
+
+                <Setter Property="HorizontalOptions"
+                        Value="Center" />
+
+                <Setter Property="VerticalOptions"
+                        Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </ContentPage.Padding>
+
+    <ContentPage.Content>
+        <StackLayout Style="{StaticResource stacklayoutStyles}">
+            <Label Text="{Binding Title}" />
+
+            <Button Text="Xamarin.Forms Events"
+                    Command="{Binding LocalCommand}" />
+
+            <Button Text="Native Events"
+                    Command="{Binding NativeCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

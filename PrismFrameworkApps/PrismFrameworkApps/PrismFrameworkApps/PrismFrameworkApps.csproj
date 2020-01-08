@@ -115,6 +115,24 @@
     <EmbeddedResource Update="src\14-AdvancedRestApi\Views\RestApiMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="src\15-MessagingCenter\Views\MessagingCenterMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\15-MessagingCenter\Views\TestOne.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\15-MessagingCenter\Views\TestTwo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\16-EventAggregator\Views\DataEntryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\16-EventAggregator\Views\EaHomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\16-EventAggregator\Views\EventAggregatorMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="src\HomePageView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -122,5 +140,7 @@
 
   <ItemGroup>
     <Folder Include="src\09-TabbedPages\ViewModels\" />
+    <Folder Include="src\17-RESTfulWebService\ViewModels\" />
+    <Folder Include="src\17-RESTfulWebService\Views\" />
   </ItemGroup>
 </Project>

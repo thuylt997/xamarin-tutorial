@@ -75,6 +75,18 @@
                         <TextCell Text="14. Advanced REST APIs Example"
                                   Command="{Binding NavigateCommand}"
                                   CommandParameter="RestApiMainPage" />
+
+                        <TextCell Text="15. MessagingCenter (Code behind)"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="MessagingCenterMain" />
+
+                        <TextCell Text="15.1. MessagingCenter (Prism MVVM Framework)"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="TestOne" />
+
+                        <TextCell Text="16. EventAggregator Example"
+                                  Command="{Binding GoToEventAggregatorCommand}" />
+
                     </TableSection>
                 </TableRoot>
             </TableView>

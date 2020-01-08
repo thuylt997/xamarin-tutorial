@@ -31,9 +31,11 @@ using PrismFrameworkApps.src._11_NavigationMode.ViewModels;
 using PrismFrameworkApps.src._11_NavigationMode.Views;
 using Xamarin.Forms;
 using PrismFrameworkApps.src._13_RefitRestApi.Views;
-using PrismFrameworkApps.src._13_RefitRestApi.ViewModels;
 using PrismFrameworkApps.src._14_AdvancedRestApi.Views;
 using PrismFrameworkApps.src._14_AdvancedRestApi.ViewModels;
+using PrismFrameworkApps.src._15_MessagingCenter.Views;
+using PrismFrameworkApps.src._16_EventAggregator.ViewModels;
+using PrismFrameworkApps.src._16_EventAggregator.Views;
 
 namespace PrismFrameworkApps
 {
@@ -150,6 +152,22 @@ namespace PrismFrameworkApps
             #region 14 - Advanced Refit REST APIs Example
             containerRegistry.RegisterForNavigation<RestApiMainPage, RestApiMainPageViewModel>();
             #endregion 14 - Advanced Refit REST APIs Example
+
+            #region 15 - MessagingCenter Example
+            // Code behind
+            containerRegistry.RegisterForNavigation<MessagingCenterMain>();
+
+            // Prism MVVM Framework
+            containerRegistry.RegisterForNavigation<TestOne>();
+            containerRegistry.RegisterForNavigation<TestTwo>();
+            #endregion 15 - MessagingCenter Example
+
+            #region 16 - Event Aggregator Example
+            containerRegistry.RegisterForNavigation<EventAggregatorMain, EventAggregatorMainViewModel>();
+            containerRegistry.RegisterForNavigation<EaHomePage, EaHomePageViewModel>();
+            containerRegistry.RegisterForNavigation<DataEntryPage, DataEntryPageViewModel>();
+            #endregion 16 - Event Aggregator Example
+
         }
 
         protected override void OnStart()

@@ -1,9 +1,11 @@
 ﻿using Foundation;
 using Prism;
+using Prism.Events;
 using Prism.Ioc;
 using PrismFrameworkApps.iOS.Services;
 using PrismFrameworkApps.src._05_PlatformSpecificServices.Services;
 using PrismFrameworkApps.src._08_NavigationPages.Services;
+using PrismFrameworkApps.src._16_EventAggregator.Models;
 using UIKit;
 
 namespace PrismFrameworkApps.iOS
@@ -26,9 +28,34 @@ namespace PrismFrameworkApps.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App(new iOSInitializer()));
+
+            var iOSInit = new iOSInitializer();
+
+            var application = new App(iOSInit);
+
+            #region 16 - Event Aggregator Example
+
+            var ea = application.Container.Resolve<IEventAggregator>()
+                                          .GetEvent<NativeEvent>()
+                                          .Subscribe(OnNameChangedEvent);
+
+            #endregion 16 - Event Aggregator Example
+
+            LoadApplication(application);
 
             return base.FinishedLaunching(app, options);
+        }
+
+        private void OnNameChangedEvent(NativeEventArgs args)
+        {
+            var alertView = new UIAlertView
+            {
+                Title = "Native Alert",
+                Message = $"Hi {args.Message}, from iOS"
+            };
+
+            alertView.AddButton("OK");
+            alertView.Show();
         }
 
         public class iOSInitializer : IPlatformInitializer

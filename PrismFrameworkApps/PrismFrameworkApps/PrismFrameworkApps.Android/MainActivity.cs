@@ -10,6 +10,9 @@ using PrismFrameworkApps.src._05_PlatformSpecificServices.Services;
 using PrismFrameworkApps.Droid.Services;
 using PrismFrameworkApps.src._08_NavigationPages.Services;
 using Acr.UserDialogs;
+using PrismFrameworkApps.src._16_EventAggregator.Models;
+using Android.Widget;
+using Prism.Events;
 
 namespace PrismFrameworkApps.Droid
 {
@@ -36,7 +39,20 @@ namespace PrismFrameworkApps.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             UserDialogs.Init(this);
-            LoadApplication(new App(new AndroidInitializer()));
+
+            var androidInitializer = new AndroidInitializer();
+
+            var application = new App(androidInitializer);
+
+            #region 16 - Event Aggregator Example
+
+            var ea = application.Container.Resolve<IEventAggregator>()
+                                          .GetEvent<NativeEvent>()
+                                          .Subscribe(OnNameChangedEvent);
+
+            #endregion 16 - Event Aggregator Example
+
+            LoadApplication(application);
 
             #region Hide status bar
             Window.AddFlags(WindowManagerFlags.Fullscreen);
@@ -51,6 +67,15 @@ namespace PrismFrameworkApps.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        void OnNameChangedEvent(NativeEventArgs args)
+        {
+            Toast.MakeText(
+                this,
+                $"Hi {args.Message}, from Android",
+                ToastLength.Long
+            ).Show();
         }
 
         public class AndroidInitializer : IPlatformInitializer

@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using PrismFrameworkApps.src._16_EventAggregator.Navigation;
 using System;
 using System.Collections.Generic;
 
@@ -13,16 +14,12 @@ namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
         public string Title { get; }
 
         public DelegateCommand GoHomeCommand { get; }
-
         public DelegateCommand BackToMenuCommand { get; }
-
         public DelegateCommand<string> NavigateCommand { get; }
-
         public DelegateCommand NavigateToMasterDetailPage { get; }
-
         public DelegateCommand NavigateToTabbedPage { get; }
-
         public DelegateCommand NavigateToNavigationPage { get; }
+        public DelegateCommand GoToEventAggregatorCommand { get; }
 
         private IEnumerable<string> messages;
 
@@ -80,6 +77,17 @@ namespace PrismFrameworkApps.src._01_HelloPrism.ViewModels
             NavigateToMasterDetailPage = new DelegateCommand(OnNavigateToMasterDetailPageExecuted);
             NavigateToTabbedPage = new DelegateCommand(OnNavigateToTabbedPageExecuted);
             NavigateToNavigationPage = new DelegateCommand(OnNavigateToNavigationPageExecuted);
+            GoToEventAggregatorCommand = new DelegateCommand(OnGoToEventAggregatorCommandExecuted);
+        }
+
+        private async void OnGoToEventAggregatorCommandExecuted()
+        {
+            var result = await _navigationService.NavigateAsync(Navigate.Start);
+
+            if (!result.Success)
+            {
+                System.Diagnostics.Debugger.Break();
+            }
         }
 
         async void OnNavigateToNavigationPageExecuted()
