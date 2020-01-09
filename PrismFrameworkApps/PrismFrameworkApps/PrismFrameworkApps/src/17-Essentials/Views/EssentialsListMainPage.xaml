@@ -51,6 +51,8 @@
                     Grid.Column="1" />
 
             <Button Text="Detect Shake"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="DetectShakePage"
                     Grid.Row="1"
                     Grid.Column="2" />
 

@@ -148,6 +148,9 @@
     <EmbeddedResource Update="src\17-Essentials\Views\ConnectivityPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="src\17-Essentials\Views\DetectShakePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="src\17-Essentials\Views\EssentialsListMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -160,7 +163,6 @@
     <Folder Include="src\09-TabbedPages\ViewModels\" />
     <Folder Include="src\17-Essentials\Models\" />
     <Folder Include="src\17-Essentials\Helpers\" />
-    <Folder Include="src\17-Essentials\Converters\" />
     <Folder Include="src\18-RESTfulWebService\ViewModels\" />
     <Folder Include="src\18-RESTfulWebService\Views\" />
   </ItemGroup>
