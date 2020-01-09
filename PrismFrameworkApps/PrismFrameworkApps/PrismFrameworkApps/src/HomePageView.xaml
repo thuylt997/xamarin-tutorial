@@ -87,6 +87,10 @@
                         <TextCell Text="16. EventAggregator Example"
                                   Command="{Binding GoToEventAggregatorCommand}" />
 
+                        <TextCell Text="17. Xamarin.Essentials Examples"
+                                  Command="{Binding NavigateCommand}"
+                                  CommandParameter="EssentialsListMainPage" />
+
                     </TableSection>
                 </TableRoot>
             </TableView>

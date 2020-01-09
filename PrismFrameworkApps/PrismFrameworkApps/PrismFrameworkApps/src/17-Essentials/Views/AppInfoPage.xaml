@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.AppInfoPage"
+                Title="App Information">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Find out about the app with ease."
+                   FontAttributes="Bold"
+                   Margin="12" />
+
+            <ScrollView>
+                <StackLayout Padding="12, 0, 12, 12"
+                             Spacing="10">
+
+                    <Label Text="App Info:"
+                           FontAttributes="Bold"
+                           Margin="0, 6, 0, 0" />
+                    <Label Text="{Binding AppName, StringFormat='Name: {0}'}" />
+                    <Label Text="{Binding AppPackageName, StringFormat='Package Name: {0}'}" />
+                    <!--<Label Text="{Binding AppTheme, StringFormat='Theme: {0}'}" />-->
+
+                    <Label Text="Version Info:"
+                           FontAttributes="Bold"
+                           Margin="0, 6, 0, 0" />
+                    <Label Text="{Binding AppVersion, StringFormat='Version: {0}'}" />
+                    <Label Text="{Binding AppBuild, StringFormat='Build: {0}'}" />
+
+                    <Button Text="Open Settings"
+                            Command="{Binding ShowSettingsUICommand}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </views:BasePage.Content>
+
+</views:BasePage>

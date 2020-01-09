@@ -6,7 +6,6 @@ using Android.OS;
 using Prism;
 using Prism.Ioc;
 using Plugin.CurrentActivity;
-using PrismFrameworkApps.src._05_PlatformSpecificServices.Services;
 using PrismFrameworkApps.Droid.Services;
 using PrismFrameworkApps.src._08_NavigationPages.Services;
 using Acr.UserDialogs;

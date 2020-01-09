@@ -36,6 +36,8 @@ using PrismFrameworkApps.src._14_AdvancedRestApi.ViewModels;
 using PrismFrameworkApps.src._15_MessagingCenter.Views;
 using PrismFrameworkApps.src._16_EventAggregator.ViewModels;
 using PrismFrameworkApps.src._16_EventAggregator.Views;
+using PrismFrameworkApps.src._17_Essentials.Views;
+using PrismFrameworkApps.src._17_Essentials.ViewModels;
 
 namespace PrismFrameworkApps
 {
@@ -168,6 +170,14 @@ namespace PrismFrameworkApps
             containerRegistry.RegisterForNavigation<DataEntryPage, DataEntryPageViewModel>();
             #endregion 16 - Event Aggregator Example
 
+            #region 17 - Xamarin.Essentials Example
+            containerRegistry.RegisterForNavigation<EssentialsListMainPage, EssentialsListMainPageViewModel>();
+            containerRegistry.RegisterForNavigation<AppInfoPage, AppInfoViewModel>();
+            containerRegistry.RegisterForNavigation<BatteryPage, BatteryViewModel>();
+            containerRegistry.RegisterForNavigation<ClipboardPage, ClipboardViewModel>();
+            containerRegistry.RegisterForNavigation<ColorConvertersPage, ColorConvertersViewModel>();
+            containerRegistry.RegisterForNavigation<ConnectivityPage, ConnectivityViewModel>();
+            #endregion 17 - Xamarin.Essentials Example
         }
 
         protected override void OnStart()

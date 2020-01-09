@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.EssentialsListMainPage"
+                Title="Xamarin.Essentials APIs">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <Grid RowSpacing="0"
+              ColumnSpacing="0">
+
+            <!--Row 1-->
+            <Button Text="App Information"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="AppInfoPage"
+                    Grid.Row="0"
+                    Grid.Column="0" />
+
+            <Button Text="Battery"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="BatteryPage"
+                    Grid.Row="0"
+                    Grid.Column="1" />
+
+            <Button Text="Clipboard"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ClipboardPage"
+                    Grid.Row="0"
+                    Grid.Column="2" />
+
+            <!--Row 2-->
+            <Button Text="Color Converters"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ColorConvertersPage"
+                    Grid.Row="1"
+                    Grid.Column="0" />
+
+            <Button Text="Connectivity"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="ConnectivityPage"
+                    Grid.Row="1"
+                    Grid.Column="1" />
+
+            <Button Text="Detect Shake"
+                    Grid.Row="1"
+                    Grid.Column="2" />
+
+            <!--Row 3-->
+            <Button Text="Device Display Information"
+                    Grid.Row="2"
+                    Grid.Column="0" />
+
+            <Button Text="Device Information"
+                    Grid.Row="2"
+                    Grid.Column="1" />
+
+            <Button Text="Email"
+                    Grid.Row="2"
+                    Grid.Column="2" />
+
+            <!--Row 4-->
+            <Button Text="File System Helpers"
+                    Grid.Row="3"
+                    Grid.Column="0" />
+
+            <Button Text="Flashlight"
+                    Grid.Row="3"
+                    Grid.Column="1" />
+
+            <Button Text="Geocoding"
+                    Grid.Row="3"
+                    Grid.Column="2" />
+
+            <!--Row 5-->
+            <Button Text="Geolocation"
+                    Grid.Row="4"
+                    Grid.Column="0" />
+
+            <Button Text="Launcher"
+                    Grid.Row="4"
+                    Grid.Column="1" />
+
+            <Button Text="Main Thread"
+                    Grid.Row="4"
+                    Grid.Column="2" />
+
+            <!--Row 6-->
+            <Button Text="Open Browser"
+                    Grid.Row="5"
+                    Grid.Column="0" />
+
+            <Button Text="Orientation Sensor"
+                    Grid.Row="5"
+                    Grid.Column="1" />
+
+            <Button Text="Phone Dialer"
+                    Grid.Row="5"
+                    Grid.Column="2" />
+
+            <!--Row 7-->
+            <Button Text="Platform Extensions"
+                    Grid.Row="6"
+                    Grid.Column="0" />
+
+            <Button Text="Share"
+                    Grid.Row="6"
+                    Grid.Column="1" />
+
+            <Button Text="Unit Converters"
+                    Grid.Row="6"
+                    Grid.Column="2" />
+        </Grid>
+    </views:BasePage.Content>
+</views:BasePage>
