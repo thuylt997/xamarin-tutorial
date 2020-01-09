@@ -101,4 +101,4 @@ git clone https://github.com/thuyducati/xamarin-tutorial
 2. Rebuild the project
 - This repo includes 4 projects, choose one of these projects and open it using Visual Studio.
 - Build the project to get all necessary NuGet Packages.
-3. In the Visual Studio toolbar, press the Start button (the triangular button that resembles a Play button) to launch the application inside your chosen remote iOS simulator or Android emulator.
+3. In the Visual Studio toolbar, press the Start button (the triangular button that resembles a Play button) to launch the application inside your chosen remote iOS simulator or Android emulator...
