@@ -178,6 +178,10 @@ namespace PrismFrameworkApps
             containerRegistry.RegisterForNavigation<ColorConvertersPage, ColorConvertersViewModel>();
             containerRegistry.RegisterForNavigation<ConnectivityPage, ConnectivityViewModel>();
             containerRegistry.RegisterForNavigation<DetectShakePage, DetectShakeViewModel>();
+            containerRegistry.RegisterForNavigation<DeviceInfoPage, DeviceInfoViewModel>();
+            containerRegistry.RegisterForNavigation<EmailPage, EmailViewModel>();
+            containerRegistry.RegisterForNavigation<FileSystemPage, FileSystemViewModel>();
+            containerRegistry.RegisterForNavigation<FlashlightPage, FlashlightViewModel>();
             #endregion 17 - Xamarin.Essentials Example
         }
 

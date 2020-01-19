@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.EmailPage"
+                Title="Email">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.ToolbarItems>
+        <ToolbarItem Text="Send"
+                     Command="{Binding SendEmailCommand}"
+                     IsEnabled="{Binding IsNotBusy}" />
+    </views:BasePage.ToolbarItems>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Easily send email messages."
+                   FontAttributes="Bold"
+                   Margin="12" />
+
+            <ScrollView>
+                <StackLayout Padding="12, 0, 12, 12"
+                             Spacing="10">
+
+                    <ActivityIndicator IsVisible="{Binding IsBusy}"
+                                       IsRunning="{Binding IsBusy}" />
+
+                    <Button Text="Send Email"
+                            Command="{Binding SendEmailCommand}"
+                            IsEnabled="{Binding IsNotBusy}" />
+
+                    <Label Text="Recipients"
+                           FontAttributes="Bold"
+                           Margin="0, 6, 0, 0" />
+                    <Label Text="To:" />
+                    <Entry Text="{Binding RecipientsTo}" />
+                    <Label Text="CC:" />
+                    <Entry Text="{Binding RecipientsCc}" />
+                    <Label Text="BCC:" />
+                    <Entry Text="{Binding RecipientsBcc}" />
+
+                    <Label Text="Message"
+                           FontAttributes="Bold"
+                           Margin="0, 6, 0, 0" />
+                    <Label Text="Subject:" />
+                    <Entry Text="{Binding Subject}" />
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Is Html?"
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center" />
+                        <Switch IsToggled="{Binding IsHtml}"
+                                VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Label Text="Body:" />
+                    <Editor Text="{Binding Body}"
+                            Keyboard="Chat"
+                            AutoSize="TextChanges" />
+
+                    <Label Text="Attachment"
+                           FontAttributes="Bold"
+                           Margin="0,6,0,0" />
+
+                    <Label Text="File Name:" />
+                    <Entry Text="{Binding AttachmentName}" />
+                    <Label Text="File Contents:" />
+                    <Editor Text="{Binding AttachmentContents}"
+                            Keyboard="Chat"
+                            AutoSize="TextChanges" />
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Attach Multiple"
+                               HorizontalTextAlignment="End"
+                               HorizontalOptions="FillAndExpand"
+                               VerticalOptions="Center" />
+                        <Switch IsToggled="{Binding HasMultipleAttachements}"
+                                VerticalOptions="Center" />
+                    </StackLayout>
+
+                    <Button Text="Send Email"
+                            Command="{Binding SendEmailCommand}"
+                            IsEnabled="{Binding IsNotBusy}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </views:BasePage.Content>
+</views:BasePage>

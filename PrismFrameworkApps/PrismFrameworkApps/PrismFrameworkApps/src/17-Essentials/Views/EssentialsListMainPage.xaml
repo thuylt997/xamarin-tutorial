@@ -57,24 +57,29 @@
                     Grid.Column="2" />
 
             <!--Row 3-->
-            <Button Text="Device Display Information"
-                    Grid.Row="2"
-                    Grid.Column="0" />
-
             <Button Text="Device Information"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="DeviceInfoPage"
                     Grid.Row="2"
-                    Grid.Column="1" />
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2" />
 
             <Button Text="Email"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="EmailPage"
                     Grid.Row="2"
                     Grid.Column="2" />
 
             <!--Row 4-->
             <Button Text="File System Helpers"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="FileSystemPage"
                     Grid.Row="3"
                     Grid.Column="0" />
 
             <Button Text="Flashlight"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="FlashlightPage"
                     Grid.Row="3"
                     Grid.Column="1" />
 

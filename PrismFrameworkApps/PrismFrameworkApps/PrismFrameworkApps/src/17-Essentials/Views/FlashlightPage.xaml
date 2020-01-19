@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:converters="clr-namespace:PrismFrameworkApps.src._17_Essentials.Converters"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.FlashlightPage"
+                Title="Flashlight">
+
+    <views:BasePage.Resources>
+        <ResourceDictionary>
+            <converters:NegativeConverter x:Key="NegativeConverter" />
+
+            <Style TargetType="Page"
+                   ApplyToDerivedTypes="True">
+
+                <Setter Property="Visual"
+                        Value="Material" />
+            </Style>
+        </ResourceDictionary>
+    </views:BasePage.Resources>
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="A simple way to turn the flashlight on/off"
+                   FontAttributes="Bold"
+                   Margin="12" />
+
+            <ScrollView>
+                <StackLayout Padding="12, 0, 12, 12"
+                             Spacing="10">
+
+                    <Button Text="Toggle Flashlight"
+                            Command="{Binding ToggleCommand}" />
+
+                    <Label Text="Flashlight is on."
+                           FontAttributes="Italic"
+                           IsVisible="{Binding IsOn}" />
+                    <Label Text="Flashlight is off."
+                           FontAttributes="Italic"
+                           IsVisible="{Binding IsOn, Converter={StaticResource NegativeConverter}}" />
+                    <Label Text="Flashlight is not supported."
+                           TextColor="Red"
+                           FontAttributes="Italic"
+                           IsVisible="{Binding IsSupported, Converter={StaticResource NegativeConverter}}" />
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </views:BasePage.Content>
+</views:BasePage>

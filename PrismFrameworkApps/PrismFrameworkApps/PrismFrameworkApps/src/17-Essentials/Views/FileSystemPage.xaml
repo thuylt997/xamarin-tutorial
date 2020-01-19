@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.FileSystemPage"
+                Title="File System Helpers">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Easily save files to app data."
+                   FontAttributes="Bold" />
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="10">
+                <Button Text="Load"
+                        Command="{Binding LoadFileCommand}"
+                        HorizontalOptions="FillAndExpand" />
+
+                <Button Text="Save"
+                        Command="{Binding SaveFileCommand}"
+                        HorizontalOptions="FillAndExpand" />
+
+                <Button Text="Delete"
+                        Command="{Binding DeleteFileCommand}"
+                        HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+
+            <Label Text="Edit the contents of the file:" />
+            <Editor Text="{Binding CurrentContents}"
+                    AutoSize="TextChanges" />
+        </StackLayout>
+    </views:BasePage.Content>
+</views:BasePage>

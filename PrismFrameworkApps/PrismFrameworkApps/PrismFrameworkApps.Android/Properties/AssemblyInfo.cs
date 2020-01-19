@@ -33,3 +33,5 @@ using Android.App;
 [assembly: UsesPermission(Android.Manifest.Permission.WriteExternalStorage)]
 [assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 [assembly: UsesPermission(Android.Manifest.Permission.AccessNetworkState)]
+[assembly: UsesPermission(Android.Manifest.Permission.Flashlight)]
+[assembly: UsesPermission(Android.Manifest.Permission.Camera)]
