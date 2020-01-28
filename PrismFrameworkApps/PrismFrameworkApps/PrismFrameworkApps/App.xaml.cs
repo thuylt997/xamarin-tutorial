@@ -182,6 +182,13 @@ namespace PrismFrameworkApps
             containerRegistry.RegisterForNavigation<EmailPage, EmailViewModel>();
             containerRegistry.RegisterForNavigation<FileSystemPage, FileSystemViewModel>();
             containerRegistry.RegisterForNavigation<FlashlightPage, FlashlightViewModel>();
+            containerRegistry.RegisterForNavigation<GeocodingPage, GeocodingViewModel>();
+            containerRegistry.RegisterForNavigation<GeolocationPage, GeolocationViewModel>();
+            containerRegistry.RegisterForNavigation<LauncherPage, LauncherViewModel>();
+            containerRegistry.RegisterForNavigation<OrientationSensorPage, OrientationSensorViewModel>();
+            containerRegistry.RegisterForNavigation<PhoneDialerPage, PhoneDialerViewModel>();
+            containerRegistry.RegisterForNavigation<SharePage, ShareViewModel>();
+            containerRegistry.RegisterForNavigation<UnitConvertersPage, UnitConvertersViewModel>();
             #endregion 17 - Xamarin.Essentials Example
         }
 

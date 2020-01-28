@@ -84,32 +84,46 @@
                     Grid.Column="1" />
 
             <Button Text="Geocoding"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="GeocodingPage"
                     Grid.Row="3"
                     Grid.Column="2" />
 
             <!--Row 5-->
             <Button Text="Geolocation"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="GeolocationPage"
                     Grid.Row="4"
                     Grid.Column="0" />
 
             <Button Text="Launcher"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="LauncherPage"
                     Grid.Row="4"
                     Grid.Column="1" />
 
             <Button Text="Main Thread"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="DetectShakePage"
                     Grid.Row="4"
                     Grid.Column="2" />
 
             <!--Row 6-->
             <Button Text="Open Browser"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="LauncherPage"
                     Grid.Row="5"
                     Grid.Column="0" />
 
             <Button Text="Orientation Sensor"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="OrientationSensorPage"
                     Grid.Row="5"
                     Grid.Column="1" />
 
             <Button Text="Phone Dialer"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="PhoneDialerPage"
                     Grid.Row="5"
                     Grid.Column="2" />
 
@@ -119,10 +133,14 @@
                     Grid.Column="0" />
 
             <Button Text="Share"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="SharePage"
                     Grid.Row="6"
                     Grid.Column="1" />
 
             <Button Text="Unit Converters"
+                    Command="{Binding NavigateCommand}"
+                    CommandParameter="UnitConvertersPage"
                     Grid.Row="6"
                     Grid.Column="2" />
         </Grid>

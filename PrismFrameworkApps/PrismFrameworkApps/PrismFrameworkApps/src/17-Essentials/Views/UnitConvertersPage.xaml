@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.UnitConvertersPage"
+                Title="Unit Converters">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Easily convert units."
+                   FontAttributes="Bold"
+                   Margin="12" />
+
+            <ScrollView>
+                <StackLayout Padding="12, 0, 12, 12"
+                             Spacing="10">
+
+                    <Label Text="Temperature" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".25*" />
+                            <ColumnDefinition Width=".5*" />
+                            <ColumnDefinition Width=".25*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Text="{Binding Fahrenheit, StringFormat='{0:N}F'}"
+                               HorizontalOptions="Center" />
+
+                        <Slider Grid.Column="1"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="{Binding Fahrenheit}"
+                                HorizontalOptions="FillAndExpand"
+                                MaximumTrackColor="Blue"
+                                MinimumTrackColor="Blue"
+                                ThumbColor="Accent" />
+
+                        <Label Grid.Column="2"
+                               Text="{Binding Celsius, StringFormat='{0:N}C'}"
+                               HorizontalOptions="Center" />
+                    </Grid>
+
+                    <Label Text="Distance" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=".25*" />
+                            <ColumnDefinition Width=".5*" />
+                            <ColumnDefinition Width=".25*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Column="0"
+                               Text="{Binding Miles, StringFormat='{0:N} mi'}"
+                               HorizontalOptions="Center" />
+
+                        <Slider Grid.Column="1"
+                                Minimum="0"
+                                Maximum="100"
+                                Value="{Binding Miles}"
+                                HorizontalOptions="FillAndExpand"
+                                MaximumTrackColor="Blue"
+                                MinimumTrackColor="Blue"
+                                ThumbColor="Accent" />
+
+                        <Label Grid.Column="2"
+                               Text="{Binding Kilometers, StringFormat='{0:N} km'}"
+                               HorizontalOptions="Center" />
+                    </Grid>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </views:BasePage.Content>
+</views:BasePage>

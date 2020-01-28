@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage xmlns:views="clr-namespace:PrismFrameworkApps.src._17_Essentials.Views"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+                xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d"
+                x:Class="PrismFrameworkApps.src._17_Essentials.Views.LauncherPage"
+                Title="Launcher">
+
+    <views:BasePage.Padding>
+        <OnPlatform x:TypeArguments="Thickness"
+                    iOS="20, 30, 20, 20"
+                    Android="20" />
+    </views:BasePage.Padding>
+
+    <views:BasePage.Content>
+        <StackLayout Spacing="20">
+            <Label Text="Check if Uri is launchable and launch it."
+                   FontAttributes="Bold"
+                   Margin="12" />
+
+            <ScrollView>
+                <Grid Padding="12, 0, 12, 12">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Entry Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Text="{Binding LaunchUri}" />
+                    <Button Grid.Row="1"
+                            Text="Check Launch"
+                            Command="{Binding CanLaunchCommand}" />
+                    <Button Grid.Row="1"
+                            Grid.Column="1"
+                            Text="Launch"
+                            Command="{Binding LaunchCommand}" />
+                    <Button Grid.Row="2"
+                            Grid.Column="0"
+                            Text="Launch Browser"
+                            Command="{Binding LaunchBrowserCommand}" />
+                    <Button Grid.Row="2"
+                            Grid.Column="1"
+                            Text="Launch Mail"
+                            Command="{Binding LaunchMailCommand}" />
+
+                    <StackLayout Grid.Row="3"
+                                 Grid.ColumnSpan="2"
+                                 Spacing="10">
+
+                        <Label Text="Open File"
+                               FontAttributes="Bold"
+                               Margin="0, 6, 0, 0" />
+
+                        <Label Text="File Name:" />
+                        <Entry Text="{Binding FileAttachmentName}" />
+
+                        <Label Text="File Contents:" />
+                        <Editor Text="{Binding FileAttachmentContents}"
+                                AutoSize="TextChanges" />
+
+                        <Button Text="Open File"
+                                Command="{Binding LaunchFileCommand}" />
+                    </StackLayout>
+                </Grid>
+            </ScrollView>
+        </StackLayout>
+    </views:BasePage.Content>
+</views:BasePage>
