@@ -1,4 +1,4 @@
-# Building your mobile app using Xamarin.
+# Building your mobile app using Xamarin. Chao moi nguoi
 <p align="center">
     <img src="https://docs.microsoft.com/en-us/xamarin/get-started/what-is-xamarin-images/xamarin-app-cropped.png" />
 </p>
